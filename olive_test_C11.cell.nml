@@ -13090,6 +13090,7 @@ Raxon = 20;
                 <distal x="105.5108" y="1.32202" z="32.44095" diameter="1.52"/>
             </segment>
 
+
             <segmentGroup id="Soma" neuroLexId="sao864921383">    <!--
                 This group contains an unbranched set of segments, and all of the segmentGroups marked with
                 neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
@@ -18598,6 +18599,18 @@ Raxon = 20;
                 <include segmentGroup="ExtraSomaSec_Comp_2049"/>
             </segmentGroup>
 
+            <segmentGroup id="axon_group">
+                <include segment="axon_1">
+            </segmentGroup>
+
+
+            <segmentGroup id="all">
+                <include segmentGroup="axon_group">
+                    <include segmentGroup="soma_group">
+                        <include segmentGroup="dendrite_group">
+            </segmentGroup>
+
+
             <segmentGroup id="Colour_Green">
                 <include segmentGroup="Sec_Comp_59"/>
                 <include segmentGroup="Sec_Comp_66"/>
@@ -18631,7 +18644,14 @@ Raxon = 20;
                 <include segmentGroup="Sec_Comp_2402"/>
             </segmentGroup>
 
-            
+           
+            <segment id="axon" name="axon_1">
+                <proximal x="131.11824" y="79.55813" z="47.315475" diameter="4.18"/>
+                <distal x="131.0086" y="79.18364" z="147.25" diameter="2"/>
+            </segment>
+
+
+
         </morphology>
 
 
