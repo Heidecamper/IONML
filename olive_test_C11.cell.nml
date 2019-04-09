@@ -47,7 +47,7 @@ Raxon = 20;
 -->
 
 
-    <cell id="cell_11A">
+    <cell id="cell_11">
 
         <morphology id="morphology_C11A_scaled_exp">
 
@@ -18511,7 +18511,7 @@ Raxon = 20;
             
                 <member segment="2600"/>
             </segmentGroup>
-            
+
             <segmentGroup id="axon_group">
                 <member segment="999999999"/>
             </segmentGroup>
