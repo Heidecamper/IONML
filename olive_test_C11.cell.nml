@@ -51,9 +51,18 @@ Raxon = 20;
 
         <morphology id="morphology_C11A_scaled_exp">
 
+
+
             <segment id="0" name="Comp_1">
                 <proximal x="131.11824" y="79.55813" z="47.315475" diameter="4.18"/>
                 <distal x="131.0086" y="79.18364" z="47.25" diameter="5.5575"/>
+            </segment>
+
+            <segment id="999999999" name="axon_1">
+                <parent segment="0"/>
+                <distal x="131.0086" y="79.18364" z="147.25" diameter="2"/>
+
+                
             </segment>
 
             <segment id="1" name="Comp_3">
@@ -18502,8 +18511,13 @@ Raxon = 20;
             
                 <member segment="2600"/>
             </segmentGroup>
+            
+            <segmentGroup id="axon_group">
+                <member segment="999999999"/>
+            </segmentGroup>
 
             <segmentGroup id="all">
+                <include segmentGroup="axon_group"/>
                 <include segmentGroup="Soma"/>
                 <include segmentGroup="ExtraSomaSec_Comp_669"/>
                 <include segmentGroup="ExtraSomaSec_Comp_854"/>
@@ -18539,6 +18553,7 @@ Raxon = 20;
                 <include segmentGroup="Sec_Comp_2326"/>
                 <include segmentGroup="Sec_Comp_2351"/>
                 <include segmentGroup="Sec_Comp_2402"/>
+       
             </segmentGroup>
 
             <segmentGroup id="Colour_White">
@@ -18599,16 +18614,6 @@ Raxon = 20;
                 <include segmentGroup="ExtraSomaSec_Comp_2049"/>
             </segmentGroup>
 
-            <segmentGroup id="axon_group">
-                <include segment="axon_1">
-            </segmentGroup>
-
-
-            <segmentGroup id="all">
-                <include segmentGroup="axon_group">
-                    <include segmentGroup="soma_group">
-                        <include segmentGroup="dendrite_group">
-            </segmentGroup>
 
 
             <segmentGroup id="Colour_Green">
@@ -18645,10 +18650,7 @@ Raxon = 20;
             </segmentGroup>
 
            
-            <segment id="axon" name="axon_1">
-                <proximal x="131.11824" y="79.55813" z="47.315475" diameter="4.18"/>
-                <distal x="131.0086" y="79.18364" z="147.25" diameter="2"/>
-            </segment>
+
 
 
 
