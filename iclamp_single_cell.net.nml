@@ -12,14 +12,14 @@
         <location x="0" y="0" z="0"/>
       </instance>
     </population>
-    <population id="pop" component="cell" type="populationList" size="1">
+    <population id="pop1" component="cell" type="populationList" size="1">
       <instance id="1">
         <location x="50" y="0" z="0"/>
       </instance>
     </population>
     <inputList id="Clamps" component="iclamp0" population="pop">
         <input id="0" target="../pop/0/cell" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
-        <input id="1" target="../pop/1/cell" segmentId="1" destination="synapses"/> <!-- iclamp into iseg -->
+        <input id="1" target="../pop1/1/cell" segmentId="1" destination="synapses"/> <!-- iclamp into iseg -->
     </inputList>
 
   </network>
