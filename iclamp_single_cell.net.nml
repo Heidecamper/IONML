@@ -13,7 +13,7 @@
       </instance>
 
       <instance id="0">
-        <location x="10" y="10" z="0"/>
+        <location x="10" y="0" z="0"/>
       </instance>
 
     </population>
