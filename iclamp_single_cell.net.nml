@@ -14,11 +14,11 @@
       </instance>
 
       <instance id="1">
-        <location x="500" y="500" z="500"/>
+        <location x="500" y="500" z="0"/>
       </instance>
 
       <instance id="2">
-        <location x="1000" y="1000" z="1000"/>
+        <location x="1000" y="1000" z="0"/>
       </instance>
     </population>
 
