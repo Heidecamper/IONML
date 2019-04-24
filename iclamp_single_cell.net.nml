@@ -8,8 +8,8 @@
 
   <network id="net" type="networkWithTemperature" temperature="35 degC">
 
-    <population id="pop" component="C11A" type="populationList" size="1">
-      <instance id="0">
+    <population id="pop" type="populationList" size="1">
+      <instance id="0" component="C11A">
         <location x="0" y="0" z="0"/>
       </instance>
 
