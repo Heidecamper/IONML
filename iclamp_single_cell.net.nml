@@ -14,20 +14,20 @@
         <location x="600" y="600" z="600"/>
       </instance>
 
-      <instance id="12">
+      <instance id="1">
         <location x="-600" y="-600" z="-600"/>
       </instance>
 
-      <instance id="13">
+      <instance id="2">
         <location x="700" y="700" z="700"/>
       </instance>
 
-      <instance id="14">
+      <instance id="3">
         <location x="-700" y="-700" z="-700"/>
       </instance>
 
 
-      <instance id="15">
+      <instance id="4">
         <location x="800" y="800" z="800"/>
       </instance>
     </population>
