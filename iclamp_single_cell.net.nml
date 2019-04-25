@@ -15,7 +15,7 @@
       </instance>
 
       <instance id="1">
-        <location x="-150" y="-150" z="-150"/>
+        <location x="600" y="600" z="600"/>
       </instance>
 
       <instance id="2">
@@ -23,12 +23,12 @@
       </instance>
 
       <instance id="3">
-        <location x="-700" y="-700" z="-700"/>
+        <location x="650" y="650" z="650"/>
       </instance>
 
 
       <instance id="4">
-        <location x="800" y="800" z="800"/>
+        <location x="750" y="750" z="750"/>
       </instance>
     </population>
 
@@ -38,11 +38,11 @@
       </instance>
 
       <instance id="1">
-        <location x="100" y="100" z="100"/>
+        <location x="50" y="50" z="50"/>
       </instance>
 
       <instance id="2">
-        <location x="-100" y="-100" z="-100"/>
+        <location x="100" y="100" z="100"/>
       </instance>
 
       <instance id="3">
@@ -50,7 +50,7 @@
       </instance>
 
       <instance id="4">
-        <location x="-200" y="-200" z="-200"/>
+        <location x="250" y="250" z="250"/>
       </instance>
 
       <instance id="5">
@@ -58,7 +58,7 @@
       </instance>
 
       <instance id="6">
-        <location x="-300" y="-300" z="-300"/>
+        <location x="350" y="350" z="350"/>
       </instance>
 
       <instance id="7">
@@ -66,7 +66,7 @@
       </instance>
 
       <instance id="8">
-        <location x="-400" y="-400" z="-400"/>
+        <location x="450" y="450" z="450"/>
       </instance>
 
       <instance id="9">
@@ -74,7 +74,7 @@
       </instance>
 
       <instance id="10">
-        <location x="-500" y="-500" z="-500"/>
+        <location x="550" y="550" z="550"/>
       </instance>
     </population>
 
