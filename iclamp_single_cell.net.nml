@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="net">
   <include href="olive_test_C11.cell.nml"/>
+  <include href="olive_test_C16.cell.nml"/>
   
 
   <!--<pulseGenerator id="iclamp0" delay="600 ms" duration="200 ms" amplitude="-1 uA"/>-->
@@ -8,7 +9,30 @@
 
   <network id="net" type="networkWithTemperature" temperature="35 degC">
 
-    <population id="pop" component="C11A" type="populationList" size="10">
+    <population id="pop1" component="C16" type="populationList" size="5">
+      <instance id="11">
+        <location x="600" y="600" z="600"/>
+      </instance>
+
+      <instance id="12">
+        <location x="-600" y="-600" z="-600"/>
+      </instance>
+
+      <instance id="13">
+        <location x="700" y="700" z="700"/>
+      </instance>
+
+      <instance id="14">
+        <location x="-700" y="-700" z="-700"/>
+      </instance>
+
+
+      <instance id="15">
+        <location x="800" y="800" z="800"/>
+      </instance>
+    </population>
+
+    <population id="pop" component="C11A" type="populationList" size="11">
       <instance id="0">
         <location x="0" y="0" z="0"/>
       </instance>
@@ -56,6 +80,7 @@
 
     <inputList id="Clamps" component="iclamp0" population="pop">
         <input id="0" target="../pop/0/C11A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+        <input id="0" target="../pop1/0/C16" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
     </inputList>
 
   </network>
