@@ -10,7 +10,7 @@
   <network id="net" type="networkWithTemperature" temperature="35 degC">
 
     <population id="pop1" component="C16" type="populationList" size="5">
-      <instance id="0">
+      <instance id="11">
         <location x="600" y="600" z="600"/>
       </instance>
 
@@ -80,7 +80,6 @@
 
     <inputList id="Clamps" component="iclamp0" population="pop">
         <input id="0" target="../pop/0/C11A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
-        <input id="0" target="../pop1/11/C16" segmentId="11" destination="synapses"/> <!-- iclamp into iseg -->
     </inputList>
 
   </network>
