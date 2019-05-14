@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  http://neuroml.svn.sourceforge.net/viewvc/neuroml/NeuroML2/Schemas/NeuroML2/NeuroML_v2alpha.xsd" id="network_Project_1">
+
+<notes>
+
+Network structure (NeuroML 2.x) for project: Project_1 saved with neuroConstruct v1.6.0 on: 09:39:41, 14-May-19
+
+Cell Group: CellGroup_21B contains 1 cells
+Cell Group: CellGroup_21A contains 1 cells
+
+Network connection: NetConn_CellGroup_21A_CellGroup_21B contains 1 individual synaptic connections
+
+</notes>
+
+
+
+    <pulseGenerator id="Input_0" delay="20.0ms" duration="60.0ms" amplitude="2.0E-4uA"/>
+
+    
+    <network id="network_Project_1">
+
+        <extracellularProperties temperature="6.3 degC"/>
+
+        <population id="CellGroup_21B" component="21B_scaled_exp" size="1"/>
+
+        <population id="CellGroup_21A" component="21A_scaled_exp" size="1"/>
+
+
+
+        <synapticConnection from="CellGroup_21A[0]" to="CellGroup_21B[0]" synapse="ElectSyn2"/>
+
+        <explicitInput target="CellGroup_21A[0]" input="Input_0"/>
+
+    </network>
+
+</neuroml>
