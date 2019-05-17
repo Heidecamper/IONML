@@ -11105,9 +11105,9 @@ Raxon = 20;
 
                 <channelDensity condDensity="1.3e-2 mS_per_cm2" id="leak_all" segmentGroup="all" ionChannel="leak" ion="_leak" erev="10 mV"/>
                 
-                <spikeThresh value="0 mV"/>
+                <spikeThresh value="-20 mV"/>
                 <specificCapacitance value="1 uF_per_cm2"/>
-                <initMembPotential value="-65.0 mV"/>
+                <initMembPotential value="-63.77 mV"/>
 
             </membraneProperties>
 
