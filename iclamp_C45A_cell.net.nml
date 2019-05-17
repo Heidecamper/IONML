@@ -4,9 +4,9 @@
   
 
   <!--<pulseGenerator id="iclamp0" delay="600 ms" duration="200 ms" amplitude="-1 uA"/>-->
-  <pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="-1 nA"/>
+  <pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="4 nA"/>
 
-  <network id="net" type="networkWithTemperature" temperature="35 degC">
+  <network id="net" type="networkWithTemperature" temperature="25 degC">
 
     <population id="pop" component="C45A" type="populationList" size="1">
       <instance id="0">
