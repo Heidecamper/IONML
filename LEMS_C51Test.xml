@@ -1,0 +1,22 @@
+<Lems>
+
+
+    <Target component="sim1" reportFile="report.txt"/>
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="iclamp_C51A_cell.net.nml"/>
+
+
+    <Simulation id="sim1" length="1000ms" step="0.025ms" target="net">
+    
+        <Display id="d1" title="Ex" timeScale="1ms" xmin="0" xmax="1000" ymin="-90" ymax="50">
+                <Line id="v" quantity="pop/0/C51A/v" scale="1mV" color="#cccccc" timeScale="1ms"/>
+        </Display>
+        
+    </Simulation>
+
+
+</Lems>
