@@ -4,17 +4,7 @@
   
 
   <!--<pulseGenerator id="iclamp0" delay="600 ms" duration="200 ms" amplitude="-1 uA"/>-->
-  <pulseGenerator id="iclamp0" delay="5 ms" duration="25 ms" amplitude="0.002 nA"/>
-
-      <!-- A voltage clamp with 3 clamp levels. Initially set to active=0, i.e. turned off! -->
-    <voltageClampTriple id="vClamp" 
-                        active = "0"
-                        delay="10ms" 
-                        duration="30ms"
-                        conditioningVoltage="-63.77mV" 
-                        testingVoltage="10mV" 
-                        returnVoltage="-63.77mV" 
-                        simpleSeriesResistance="1e4ohm"/>
+  <pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="-1 nA"/>
 
   <network id="net" type="networkWithTemperature" temperature="35 degC">
 
@@ -27,11 +17,6 @@
     <inputList id="Clamps" component="iclamp0" population="pop">
         <input id="0" target="../pop/0/C51A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
     </inputList>
-
-    <inputList id="VClampInput" component="vClamp" population="pop">
-         <input id="0" target="../pop/0/C51A" destination="synapses"/>
-    </inputList>
-        
 
   </network>
 
