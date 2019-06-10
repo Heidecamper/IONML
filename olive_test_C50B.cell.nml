@@ -429,8 +429,12 @@ Raxon = 20;
                 <member segment="143"/>
             </segmentGroup>
 
-            <segmentGroup id="axon_group">
+            <segmentGroup id="axon_seg" neuroLexId="sao864921383"> 
                 <member segment="999999999"/>
+            </segmentGroup>
+
+            <segmentGroup id="axon_group" neuroLexId="GO:0030424">    <!--Axon group-->
+                <include segmentGroup="axon_seg"/>
             </segmentGroup>
 
             <segmentGroup id="all">
