@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  http://neuroml.svn.sourceforge.net/viewvc/neuroml/NeuroML2/Schemas/NeuroML2/NeuroML_v2alpha.xsd" id="resample20">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  http://neuroml.svn.sourceforge.net/viewvc/neuroml/NeuroML2/Schemas/NeuroML2/NeuroML_v2alpha.xsd" id="C51_resample20">
 
 
     <!-- soma -->
@@ -67,7 +67,7 @@ inode R X Y Z D/2 idpar
 
             <segment id="999999999" name="axon_1">
                 <parent segment="0"/>
-                <distal x="101.51114" y="118.306" z="64.9753" diameter="1"/>
+                <distal x="101.0331" y="118.0343" z="65.0716" diameter="1"/>
             </segment>
 
             <segment id="1" name="Comp_2">
@@ -734,7 +734,7 @@ inode R X Y Z D/2 idpar
                 <include segmentGroup="Sec_Comp_29"/>
             </segmentGroup>
 
-            <segmentGroup id="axon_group">
+            <segmentGroup id="dendrite_group">
                 <include segmentGroup="Sec_Comp_2"/>
                 <include segmentGroup="Sec_Comp_3"/>
                 <include segmentGroup="Sec_Comp_4"/>
