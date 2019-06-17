@@ -15,7 +15,7 @@
     </population>
 
     <inputList id="Clamps" component="iclamp0" population="pop">
-        <input id="0" target="../pop/0/C51A_resample20" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+        <input id="0" target="../pop/0/C51Aresample20" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
     </inputList>
 
   </network>
