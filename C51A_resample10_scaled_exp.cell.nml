@@ -74,34 +74,19 @@ inode R X Y Z D/2 idpar
             <segment id="2" name="Comp_4">
                 <parent segment="0" fractionAlong="0.0"/>
                 <proximal x="100.0331" y="117.0343" z="64.0716" diameter="12.16"/>
-                <distal x="106.92203" y="120.05485" z="64.55995" diameter="6.0325"/>    <properties>
-                    
-                    <property tag="comment" value="Segment originally specified as in soma being put in seperate section, as it's parent segment already has a child in the soma section"/>
-
-                </properties>
-            
+                <distal x="106.92203" y="120.05485" z="64.55995" diameter="6.0325"/>        
             </segment>
 
             <segment id="3" name="Comp_5">
                 <parent segment="0" fractionAlong="0.0"/>
                 <proximal x="100.0331" y="117.0343" z="64.0716" diameter="12.16"/>
-                <distal x="98.99107" y="117.04462" z="54.89248" diameter="3.8"/>    <properties>
-                    
-                    <property tag="comment" value="Segment originally specified as in soma being put in seperate section, as it's parent segment already has a child in the soma section"/>
-
-                </properties>
-            
+                <distal x="98.99107" y="117.04462" z="54.89248" diameter="3.8"/>             
             </segment>
 
             <segment id="4" name="Comp_6">
                 <parent segment="0" fractionAlong="0.0"/>
                 <proximal x="100.0331" y="117.0343" z="64.0716" diameter="12.16"/>
-                <distal x="96.0066" y="116.31692" z="56.843876" diameter="11.6375"/>    <properties>
-                    
-                    <property tag="comment" value="Segment originally specified as in soma being put in seperate section, as it's parent segment already has a child in the soma section"/>
-
-                </properties>
-            
+                <distal x="96.0066" y="116.31692" z="56.843876" diameter="11.6375"/>       
             </segment>
 
             <segment id="5" name="Comp_7">
