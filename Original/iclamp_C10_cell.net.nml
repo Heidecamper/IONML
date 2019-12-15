@@ -24,14 +24,7 @@
         <input id="0" target="../pop/0/C10" segmentId="0" destination="synapses"
 
           /> <!-- iclamp into iseg -->
-    </inputList>
 
-
-        <inputList id="Clamps1" component="iclamp0" population="pop1">
-        <input id="0" target="../pop1/0/C45A" segmentId="0" destination="synapses"
-
-          /> <!-- iclamp into iseg -->
-    </inputList>
   </network>
 
 </neuroml>
