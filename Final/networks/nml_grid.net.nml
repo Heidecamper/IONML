@@ -8,6 +8,22 @@
 <include href="../cells/C20A_scaled_exp.cell.nml"/>
 <include href="../cells/C21B_scaled_exp.cell.nml"/>
 <include href="../cells/C23_scaled_exp.cell.nml"/>
+<include href="../cells/C25A_scaled_exp.cell.nml"/>
+<include href="../cells/C32B_scaled_exp.cell.nml"/>
+<include href="../cells/C45A_scaled_exp.cell.nml"/>
+<include href="../cells/C46A_scaled_exp.cell.nml"/>
+<include href="../cells/C46B_scaled_exp.cell.nml"/>
+<include href="../cells/C48_scaled_exp.cell.nml"/>
+<include href="../cells/C49A_scaled_exp.cell.nml"/>
+<include href="../cells/C49C_scaled_exp.cell.nml"/>
+<include href="../cells/C4A_scaled_exp.cell.nml"/>
+<include href="../cells/C50B_scaled_exp.cell.nml"/>
+<include href="../cells/C51Aresample10_scaled_exp.cell.nml"/>
+<include href="../cells/C51Aresample20_scaled_exp.cell.nml"/>
+<include href="../cells/C51Aresample20_test_scaled_exp.cell.nml"/>
+<include href="../cells/C51A_scaled_exp.cell.nml"/>
+<include href="../cells/C51C_scaled_exp.cell.nml"/>
+<include href="../cells/C51D_scaled_exp.cell.nml"/>
 
 <pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="-1 nA"/>
 
@@ -52,6 +68,102 @@
 	<population id="pop6" component="C23" type="populationList" size="1">
 		<instance id="0">
 			<location x="1200" y="0" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop7" component="C25A" type="populationList" size="1">
+		<instance id="0">
+			<location x="1400" y="0" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop8" component="C32B" type="populationList" size="1">
+		<instance id="0">
+			<location x="1600" y="0" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop9" component="C45A" type="populationList" size="1">
+		<instance id="0">
+			<location x="1800" y="0" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop10" component="C46A" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="200" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop11" component="C46B" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="400" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop12" component="C48" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="600" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop13" component="C49A" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="800" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop14" component="C49C" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="1000" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop15" component="C4A" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="1200" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop16" component="C50B" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="1400" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop17" component="C51Aresample10" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="1600" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop18" component="C51Aresample20" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="1800" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop19" component="C51Aresample20" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="2000" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop20" component="C51A" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="2200" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop21" component="C51C" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="2400" z="0"/>
+		</instance>
+	</population>
+
+	<population id="pop22" component="C51D" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="2600" z="0"/>
 		</instance>
 	</population>
 
