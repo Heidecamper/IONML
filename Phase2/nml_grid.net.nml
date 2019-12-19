@@ -27,8 +27,8 @@
 			</instance>
 		</population>
 
-	    <inputList id="Clamps" component="iclamp0" population="pop">
-	        <input id="0" target="../pop/0/C11A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+	    <inputList id="Clamps" component="iclamp0" population="pop0">
+	        <input id="0" target="../pop0/0/C11A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
 	    </inputList>
 
 	</network>
