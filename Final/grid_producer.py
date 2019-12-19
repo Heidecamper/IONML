@@ -19,7 +19,7 @@ net_temp = "35 degC"
 pop_num = "number_of_cells" # currently not used. Every cell has its private population by default
 pop_id = "pop"
 pop_type = "populationList"
-pop_size = "2"
+pop_size = "1"
 spacing_1d = 200
 
 # important that file naming of the cells starts with the components name and is separated by a _. 
@@ -40,7 +40,7 @@ output_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
 output_file.write('<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="net">\n\n')
 
 while line:
-	output_file.write('<include href="')
+	output_file.write('<include href="../cells/')
 	output_file.write(line.strip())
 	output_file.write('"/>\n')
 	line = file_names.readline()
