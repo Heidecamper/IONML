@@ -4,7 +4,6 @@
 <include href="../cells/C10_scaled_exp.cell.nml"/>
 <include href="../cells/C11A_scaled_exp.cell.nml"/>
 <include href="../cells/C15A_scaled_exp.cell.nml"/>
-<include href="../cells/C16_scaled_exp.cell.nml"/>
 <include href="../cells/C1A_scaled_exp.cell.nml"/>
 <include href="../cells/C20A_scaled_exp.cell.nml"/>
 <include href="../cells/C21B_scaled_exp.cell.nml"/>
@@ -32,33 +31,27 @@
 		</instance>
 	</population>
 
-	<population id="pop3" component="C16" type="populationList" size="1">
+	<population id="pop3" component="C1A" type="populationList" size="1">
 		<instance id="0">
 			<location x="600" y="0" z="0"/>
 		</instance>
 	</population>
 
-	<population id="pop4" component="C1A" type="populationList" size="1">
+	<population id="pop4" component="C20A" type="populationList" size="1">
 		<instance id="0">
 			<location x="800" y="0" z="0"/>
 		</instance>
 	</population>
 
-	<population id="pop5" component="C20A" type="populationList" size="1">
+	<population id="pop5" component="C21B" type="populationList" size="1">
 		<instance id="0">
 			<location x="1000" y="0" z="0"/>
 		</instance>
 	</population>
 
-	<population id="pop6" component="C21B" type="populationList" size="1">
+	<population id="pop6" component="C23" type="populationList" size="1">
 		<instance id="0">
 			<location x="1200" y="0" z="0"/>
-		</instance>
-	</population>
-
-	<population id="pop7" component="C23" type="populationList" size="1">
-		<instance id="0">
-			<location x="1400" y="0" z="0"/>
 		</instance>
 	</population>
 
