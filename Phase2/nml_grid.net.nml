@@ -14,17 +14,17 @@
 		</instance>
 
 		<instance id="1">
-			<location x="100" y="0" z="0"/>
+			<location x="100" y="100" z="100"/>
 		</instance>
 	</population>
 
 	<population id="pop1" component="C20A" type="populationlist" size="2">
 		<instance id="0">
-			<location x="200" y="0" z="0"/>
+			<location x="200" y="200" z="200"/>
 		</instance>
 
 		<instance id="1">
-			<location x="300" y="0" z="0"/>
+			<location x="300" y="300" z="300"/>
 		</instance>
 	</population>
 
