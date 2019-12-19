@@ -1,2 +1,0 @@
-C11A_scaled_exp.cell.nml
-C20A_scaled_exp.cell.nml
