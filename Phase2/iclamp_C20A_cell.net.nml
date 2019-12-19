@@ -20,4 +20,18 @@
 
   </network>
 
+  <network id="net1" type="networkWithTemperature" temperature="35 degC">
+
+    <population id="pop1" component="C20A" type="populationList" size="1">
+      <instance id="0">
+        <location x="100" y="100" z="100"/>
+      </instance>
+    </population>
+
+    <inputList id="Clamps" component="iclamp0" population="pop">
+        <input id="0" target="../pop1/0/C20A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+    </inputList>
+
+  </network>
+
 </neuroml>
