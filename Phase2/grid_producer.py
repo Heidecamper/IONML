@@ -12,13 +12,13 @@ pulse_amplitude = "-1 nA"
 
 # parameters for the type of network
 net_id = "net"
-net_type = "networkWithtemperature"
+net_type = "networkWithTemperature"
 net_temp = "35 degC"
 
 # parameters for the population 
 pop_num = "number_of_cells" # currently not used. Every cell has its private population by default
 pop_id = "pop"
-pop_type = "populationlist"
+pop_type = "populationList"
 pop_size = "2"
 spacing_1d = 100
 
