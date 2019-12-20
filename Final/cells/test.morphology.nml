@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="C10_scaled_exp">
+    <cell id="C11A">
 
   <morphology id="morphology_C11A_scaled_exp">
 
@@ -18641,5 +18642,5 @@
             </intracellularProperties>
 
         </biophysicalProperties>
-
+            </cell>
 </neuroml>
