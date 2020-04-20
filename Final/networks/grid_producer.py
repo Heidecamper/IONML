@@ -85,7 +85,7 @@ coordinates = [0,0,0]
 counting_grid = 0
 while line:
 	cnt_pop_size = 0
-	temp = line.strip().split('.')
+	temp = line.strip().split('_')
 	output_file.write('\t<population id="')
 	output_file.write(pop_id)
 	output_file.write(str(cnt_pop))
