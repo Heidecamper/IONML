@@ -82,9 +82,10 @@ cnt_pop = 0
 cnt_spacing = 0
 pop = int(pop_size)
 coordinates = [0,0,0]
+counting_grid = 0
 while line:
 	cnt_pop_size = 0
-	temp = line.strip().split('_')
+	temp = line.strip().split('.')
 	output_file.write('\t<population id="')
 	output_file.write(pop_id)
 	output_file.write(str(cnt_pop))
@@ -114,9 +115,12 @@ while line:
 		cnt_pop_size+=1
 		cnt_spacing +=1
 		coordinates[0]+=spacing_1d
-		if cnt_spacing >= 10:
+		if cnt_spacing%dim == 0:
 			coordinates[0] = 0
-			coordinates[1] += spacing_1d
+			counting_grid += 1
+			coordinates[1] = counting_grid * spacing_1d
+
+
 	output_file.write('\t</population>\n\n')
 
 	line = file_names.readline()
