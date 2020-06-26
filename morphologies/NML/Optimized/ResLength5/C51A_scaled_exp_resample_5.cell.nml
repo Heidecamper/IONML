@@ -63,6 +63,12 @@ inode R X Y Z D/2 idpar</notes>
                 <distal x="103.44089" y="117.78664" z="64.21883" diameter="10.26"/>
             </segment>
 
+	
+            <segment id="999999999" name="axon_1">
+                <parent segment="0"/>
+                <distal x="101.51114" y="118.306" z="64.9753" diameter="1"/>
+            </segment>
+
             <segment id="1" name="Comp_3">
                 <parent segment="0"/>
                 <distal x="99.62035" y="121.99568" z="64.0379" diameter="8.0275"/>
@@ -2365,8 +2371,16 @@ inode R X Y Z D/2 idpar</notes>
             
                 <member segment="274"/>
             </segmentGroup>
+            <segmentGroup id="axon_seg" neuroLexId="sao864921383"> 
+                <member segment="999999999"/>
+            </segmentGroup>
 
+            <segmentGroup id="axon_group" neuroLexId="GO:0030424">    <!--Axon group-->
+                <include segmentGroup="axon_seg"/>
+            </segmentGroup>
+	
             <segmentGroup id="all">
+                <include segmentGroup="axon_group"/>
                 <include segmentGroup="Soma"/>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
