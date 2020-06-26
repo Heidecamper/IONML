@@ -41,7 +41,7 @@ output_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
 output_file.write('<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="net">\n\n')
 
 while line:
-	output_file.write('<include href="../cells/Optimized/ResLength5/')
+	output_file.write('<include href="../Optimized/ResLength5/')
 	output_file.write(line.strip())
 	output_file.write('"/>\n')
 	line = file_names.readline()
