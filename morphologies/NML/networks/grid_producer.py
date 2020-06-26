@@ -1,7 +1,10 @@
 import sys
 import numpy as np
-
+#needs 2 input parameters 
+#	input 1 is the location of the text file that contains the names of the morphologies
+#	input 2 is the name of the output file you will create. Dont forget the extension (.net.nml)
 #Location of nml files
+
 cell_locat = '<include href="../cells/'
 
 #parameters for pulse generator
@@ -30,12 +33,12 @@ spacing_1d = 200
 line_count = 0
 
 
-if(len(sys.argv) == 1):
+if(len(sys.argv) <= 2):
 	print("I need an input!")
 	exit(1)
 
 file_names = open(sys.argv[1],'r')
-output_file = open("nml_grid.net.nml",'w')
+output_file = open(sys.argv[2],'w')
 line = file_names.readline()
 output_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
 output_file.write('<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="net">\n\n')
