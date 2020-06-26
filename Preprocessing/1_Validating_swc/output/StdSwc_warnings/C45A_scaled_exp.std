@@ -1,0 +1,19 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C45A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 403 at 3.3725 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  208.52386  207.42452  88.85475
+4.3  Radius of line 404 at 3.25356 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  208.47674  208.09674  87.8589
+4.4  Line 342 of rad 1.52 links to 341 of rad 0.76.  (no action taken)
+     B1      X, Y, Z:  186.31058  244.03296  39.3318
+4.4  Line 755 of rad 1.045 links to 754 of rad 0.38.  (no action taken)
+     B1      X, Y, Z:  202.40168  239.40798  42.3027
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  211.19298  207.76158  112.9842
+2.1  Line 252 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  211.28  207.86  110.7
+ 
+ 

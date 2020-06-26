@@ -1,0 +1,6 @@
+Go to: http://www.neuroconstruct.org/nCinfo/form.php. Fill in your credentials and you will get redirected to a page with all the latest releases of neuroConstruct. 
+
+For the conversion of the .swc into .nml files. I used the latest version (neuroConstruct v_1.7.2).
+
+Follow the instructions specified on github on https://github.com/NeuralEnsemble/neuroConstruct/blob/master/INSTALL.md
+

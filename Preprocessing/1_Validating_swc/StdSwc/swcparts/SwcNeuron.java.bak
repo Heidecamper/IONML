@@ -1,0 +1,1291 @@
+package swcparts;
+
+import java.text.*;
+import java.io.*;
+
+public class SwcNeuron {
+     private int maxSWClines = 50000;
+     private int maxCommentLines = 50000;
+     private String[] CommentLineArray = new String[maxCommentLines];
+     private SwcLine[] LineArray = new SwcLine[maxSWClines];
+     private int NeuronSize;
+     private int CommentSize;
+     private String FileName;
+     private String PatternOut = "0.####";
+     private DecimalFormat myFormatter = new DecimalFormat(PatternOut);
+
+     public void InitSwcNeuron(String in) {
+          FileName = in;
+          try {
+               //Buffer input stream
+               //open input file
+               FileInputStream fin = new FileInputStream(in);
+               BufferedInputStream bin = new BufferedInputStream(fin);
+               //character stream
+               BufferedReader r = new BufferedReader(new InputStreamReader(bin));
+               r.mark(1);
+
+               //Input comment lines into string array
+               for (int i = 1; 1 < maxCommentLines; i++) {
+                    CommentLineArray[i] = new String();
+                    CommentLineArray[i] = r.readLine();
+                    if ( (CommentLineArray[i] != null) && (CommentLineArray[i].startsWith("#"))) {
+                         ++CommentSize;
+                    }
+                    else {
+                         break;
+                    }
+               }
+
+               //Tokenize buffered input stream
+               r.reset();
+               StreamTokenizer tokens = new StreamTokenizer(r);
+
+               //set tokens paramaters
+               tokens.commentChar('#');
+               tokens.parseNumbers();
+
+               //initialize temp paramaters to read from swc file and place into SwcLines array
+               int tempLineNum;
+               int tempLineType;
+               double tempX;
+               double tempY;
+               double tempZ;
+               double tempRad;
+               int tempLink = 0;
+               boolean eof = false;
+               boolean eol = false;
+               int linesRead = 0;
+               int c;
+               int d;
+               tokens.eolIsSignificant(true);
+
+               while (eof == false) {
+                    eol = false;
+                    c = tokens.nextToken();
+                    if (c == StreamTokenizer.TT_EOF) {
+                         eof = true;
+                    }
+                    else if (c == StreamTokenizer.TT_EOL) {
+                         eol = true;
+                    }
+                    else {
+                         tempLineNum = (int) tokens.nval;
+                         c = tokens.nextToken();
+                         if (c == StreamTokenizer.TT_EOF) {
+                              eof = true;
+                         }
+                         else if (c == StreamTokenizer.TT_EOL) {
+                              eol = true;
+                         }
+                         else {
+                              tempLineType = (int) tokens.nval;
+                              c = tokens.nextToken();
+                              if (c == StreamTokenizer.TT_EOF) {
+                                   eof = true;
+                              }
+                              else if (c == StreamTokenizer.TT_EOL) {
+                                   eol = true;
+                              }
+                              else {
+                                   tempX = tokens.nval;
+                                   c = tokens.nextToken();
+                                   if (c == StreamTokenizer.TT_EOF) {
+                                        eof = true;
+                                   }
+                                   else if (c == StreamTokenizer.TT_EOL) {
+                                        eol = true;
+                                   }
+                                   else {
+                                        tempY = tokens.nval;
+                                        c = tokens.nextToken();
+                                        if (c == StreamTokenizer.TT_EOF) {
+                                             eof = true;
+                                        }
+                                        else if (c == StreamTokenizer.TT_EOL) {
+                                             eol = true;
+                                        }
+                                        else {
+                                             tempZ = tokens.nval;
+                                             c = tokens.nextToken();
+                                             if (c == StreamTokenizer.TT_EOF) {
+                                                  eof = true;
+                                             }
+                                             else if (c == StreamTokenizer.TT_EOL) {
+                                                  eol = true;
+                                             }
+                                             else {
+                                                  tempRad = tokens.nval;
+                                                  c = tokens.nextToken();
+                                                  if (c == StreamTokenizer.TT_EOF) {
+                                                       eof = true;
+                                                  }
+                                                  else if (c == StreamTokenizer.TT_EOL) {
+                                                       eol = true;
+                                                  }
+                                                  else {
+                                                       tempLink = (int) tokens.nval;
+                                                       ++linesRead;
+                                                  }
+                                                  LineArray[linesRead] = new swcparts.SwcLine();
+                                                  LineArray[linesRead].setLine(tempLineNum, tempLineNum, tempLineType, tempX, tempY, tempZ, tempRad, tempLink);
+                                             }
+                                        }
+                                   }
+                              }
+                         }
+                    }
+               }
+               NeuronSize = linesRead;
+               //    System.out.println(linesRead);
+          }
+          catch (IOException e) {
+               System.out.println("error:  " + e.getMessage());
+               System.out.println("Hit enter.");
+               char character;
+               try {
+                    character = (char) System.in.read();
+               }
+               catch (IOException f) {}
+          }
+     }
+
+     public int getSize() {
+          return NeuronSize;
+     }
+
+     public double getZ(int linenum) {
+          return LineArray[linenum].getLineZ();
+     }
+
+     public double getY(int linenum) {
+          return LineArray[linenum].getLineY();
+     }
+
+     public double getX(int linenum) {
+          return LineArray[linenum].getLineX();
+     }
+
+     public double getRad(int linenum) {
+          return LineArray[linenum].getLineRad();
+     }
+
+     public int getLink(int linenum) {
+          return LineArray[linenum].getLineLink();
+     }
+
+     public int getType(int linenum) {
+          return LineArray[linenum].getLineType();
+     }
+
+// check for type 1.1 and 1.2 irregularities
+     public void badType(PrintWriter fileout) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() < (1)) || (LineArray[i].getLineType() > (10))) {
+                    fileout.println("1.1  Line " + LineArray[i].getOrigionalLineNum() + " of type " + LineArray[i].getLineType() + " is of an invalid type.  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if ( (LineArray[i].getLineType() != LineArray[LineArray[i].getLineLink()].getLineType()) && (LineArray[LineArray[i].getLineLink()].getLineType() != 1)) {
+                    fileout.println("1.2  Line " + LineArray[i].getOrigionalLineNum() + " of type " + LineArray[i].getLineType() + " links to incorrect type " +
+                                    LineArray[LineArray[i].getLineLink()].getLineType() +
+                                    ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+          }
+     }
+
+     // check for type 1.1 and 1.2 irregularities
+     public void badTypeFix(PrintWriter fileout) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() < (1)) || (LineArray[i].getLineType() > (10))) {
+                    fileout.print("1.1  Line " + LineArray[i].getOrigionalLineNum() + " of type " + LineArray[i].getLineType() + " is of an invalid type");
+
+                    if ( (LineArray[i].getLineType() != LineArray[LineArray[i].getLineLink()].getLineType()) &&
+                        (LineArray[LineArray[i].getLineLink()].getLineType() == this.getFirstDaughterNumType(i))) {
+                         LineArray[i].setLineType(LineArray[LineArray[i].getLineLink()].getLineType());
+                         fileout.println("      (type changed to " + LineArray[LineArray[i].getLineLink()].getLineType() + ")");
+                         fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+
+                    }
+                    else {
+                         fileout.println(".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+               if ( (LineArray[i].getLineType() != LineArray[LineArray[i].getLineLink()].getLineType()) && (LineArray[LineArray[i].getLineLink()].getLineType() != 1)) {
+                    fileout.print("1.2  Line " + LineArray[i].getOrigionalLineNum() + " of type " + LineArray[i].getLineType() + " links to incorrect type " +
+                                  LineArray[LineArray[i].getLineLink()].getLineType());
+                    if (LineArray[LineArray[i].getLineLink()].getLineType() == this.getFirstDaughterNumType(i)) {
+                         LineArray[i].setLineType(LineArray[LineArray[i].getLineLink()].getLineType());
+                         fileout.println("      (type changed to " + LineArray[LineArray[i].getLineLink()].getLineType() + ")");
+                         fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+
+                    }
+                    else {
+                         fileout.println(".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+     //check for type 2.2
+     public void badStartType(PrintWriter fileout) {
+          if (LineArray[1].getLineType() != 1) {
+               fileout.println("2.2  Line 1 is of type " + LineArray[1].getLineType() + ".  (no action taken)");
+               fileout.println("     B1      X, Y, Z:  " + this.getX(1) + this.getY(1) + this.getZ(1));
+          }
+     }
+
+     //check for type 3.4
+     public void badStartLink(PrintWriter fileout) {
+          if (LineArray[1].getLineLink() != -1) {
+               fileout.println("2.2  Line 1 links to " + LineArray[1].getLineLink() + ".  (no action taken)");
+               fileout.println("     B1      X, Y, Z:  " + this.getX(1) + this.getY(1) + this.getZ(1));
+          }
+     }
+
+     //check for and fix type 3.4
+     public void badStartLinkFix(PrintWriter fileout) {
+          if (LineArray[1].getLineLink() != -1) {
+               fileout.println("2.2  Line 1 links to " + LineArray[1].getLineLink() + "     Changed to -1");
+               fileout.println("     A       X, Y, Z:  " + this.getX(1) + this.getY(1) + this.getZ(1));
+               LineArray[1].setLineLink( -1);
+          }
+     }
+
+     //check for type 3.3
+     public void pointSoma(PrintWriter fileout) {
+          if (this.countType(1) == 1) {
+               fileout.println("3.3  Line 1 links to " + LineArray[1].getLineLink() + ".  (no action taken)");
+               fileout.println("     B1      X, Y, Z:  " + this.getX(1) + this.getY(1) + this.getZ(1));
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3) min value, max stdev,
+     public void badRadMinStdev(PrintWriter fileout, double min, double stDevm) {
+          double mean = this.meanRad();
+          double stdev = this.stdevRad();
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (LineArray[i].getLineRad() == 0) {
+                    fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (no action taken) ");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               else if (LineArray[i].getLineRad() <= min) {
+                    fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if (LineArray[i].getLineRad() - mean >= stdev * stDevm) {
+                    fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + stDevm +
+                                    " stdevs.  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)terminal stdev, min value, max stdev,
+     public void badRadTermsMinStdev(PrintWriter fileout, double terms, double min, double stDevm) {
+          double termMax = (this.meanTermRad() + (terms * this.stdevTermRad()));
+          double mean = this.meanRad();
+          double stdev = this.stdevRad();
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (LineArray[i].getLineRad() == 0) {
+                    fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (no action taken) ");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+
+               else if (LineArray[i].getLineRad() <= min) {
+                    fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                    fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                    " stdevs above the mean.  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               else if (LineArray[i].getLineRad() - mean >= stdev * stDevm) {
+                    fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + stDevm +
+                                    " stdevs above the mean.  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)min value, max stdev, type
+     public void badRadMinStdev(PrintWriter fileout, double min, double stDevm, int type) {
+          double mean = this.meanRad(type);
+          double stdev = this.stdevRad(type);
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (no action taken) ");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if (LineArray[i].getLineRad() - mean >= stdev * stDevm) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + stDevm +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)  terminal stdev, min value, max stdev, type
+     public void badRadTermsMinStdev(PrintWriter fileout, double terms, double min, double stDevm, int type) {
+          double termMax = (this.meanTermRad(type) + (terms * this.stdevTermRad(type)));
+          double mean = this.meanRad(type);
+          double stdev = this.stdevRad(type);
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (no action taken) ");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                         fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() - mean >= stdev * stDevm) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + stDevm +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+
+               }
+          }
+     }
+
+//check for type 4.1, 4.2, 4.3)  terminal stdev, min value, max stdev, type
+     public void badRadTermsMinStdevFixZero(PrintWriter fileout, double terms, double min, double stDevm, int type) {
+          double termMax = (this.meanTermRad(type) + (terms * this.stdevTermRad(type)));
+          double mean = this.meanRad(type);
+          double stdev = this.stdevRad(type);
+          for (int i = 2; i <= NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         LineArray[i].setLineRadius(LineArray[LineArray[i].getLineLink()].getLineRad());
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (changed to " + LineArray[LineArray[i].getLineLink()].getLineRad() +
+                                         ")");
+                         fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                         fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() - mean >= stdev * stDevm) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + stDevm +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)
+     public void badRadTermsMinMax(PrintWriter fileout, double terms, double min, double max) {
+          double termMax = (this.meanTermRad() + (terms * this.stdevTermRad()));
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (LineArray[i].getLineRad() == 0) {
+                    fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0 .  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+
+               else if (LineArray[i].getLineRad() <= min) {
+                    fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                    fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                    " stdevs above the mean.  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               else if (LineArray[i].getLineRad() >= max) {
+                    fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                    ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+
+          }
+     }
+
+//check for type 4.1, 4.2, 4.3)
+     public void badRadMinMax(PrintWriter fileout, double min, double max) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (LineArray[i].getLineRad() == 0) {
+                    fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0 .  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               else if (LineArray[i].getLineRad() <= min) {
+                    fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if (LineArray[i].getLineRad() >= max) {
+                    fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                    ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)
+     public void badRadMinMax(PrintWriter fileout, double min, double max, int type) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (no action taken) ");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if (LineArray[i].getLineRad() >= max) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)
+     public void badRadTermsMinMax(PrintWriter fileout, double terms, double min, double max, int type) {
+          double termMax = (this.meanTermRad(type) + (terms * this.stdevTermRad(type)));
+
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (no action taken) ");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                         fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() >= max) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+
+               }
+          }
+     }
+
+//check for type 4.1, 4.2, 4.3)
+     public void badRadMinMaxFixZero(PrintWriter fileout, double min, double max) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (LineArray[i].getLineRad() == 0) {
+                    LineArray[i].setLineRadius(LineArray[LineArray[i].getLineLink()].getLineRad());
+                    fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (changed to " + LineArray[LineArray[i].getLineLink()].getLineRad() + ")");
+
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               else if (LineArray[i].getLineRad() <= min) {
+                    fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if (LineArray[i].getLineRad() >= max) {
+                    fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                    ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+          }
+     }
+
+//check for type 4.1, 4.2, 4.3)
+     public void badRadTermsMinMaxFixZero(PrintWriter fileout, double terms, double min, double max) {
+          double termMax = (this.meanTermRad() + (terms * this.stdevTermRad()));
+
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (LineArray[i].getLineRad() == 0) {
+                    LineArray[i].setLineRadius(LineArray[LineArray[i].getLineLink()].getLineRad());
+                    fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (changed to " + LineArray[LineArray[i].getLineLink()].getLineRad() + ")");
+
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               else if (LineArray[i].getLineRad() <= min) {
+                    fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                    fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                    " stdevs above the mean.  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+
+               else if (LineArray[i].getLineRad() >= max) {
+                    fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                    ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)
+     public void badRadMinMaxFixZero(PrintWriter fileout, double min, double max, int type) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         LineArray[i].setLineRadius(LineArray[LineArray[i].getLineLink()].getLineRad());
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (changed to " + LineArray[LineArray[i].getLineLink()].getLineRad() +
+                                         ")");
+                         fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if (LineArray[i].getLineRad() >= max) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+     //check for type 4.1, 4.2, 4.3)
+     public void badRadTermsMinMaxFixZero(PrintWriter fileout, double terms, double min, double max, int type) {
+          double termMax = (this.meanTermRad(type) + (terms * this.stdevTermRad(type)));
+
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (LineArray[i].getLineRad() == 0) {
+                         LineArray[i].setLineRadius(LineArray[LineArray[i].getLineLink()].getLineRad());
+                         fileout.println("4.1  Radius of line " + LineArray[i].getOrigionalLineNum() + " = 0.  (changed to " + LineArray[LineArray[i].getLineLink()].getLineRad() +
+                                         ")");
+                         fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    else if (LineArray[i].getLineRad() <= min) {
+                         fileout.println("4.2  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " <= " + min +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if ( (LineArray[i].getLineRad() >= termMax) && (LineArray[i].getNumDaughters() == 0)) {
+                         fileout.println("4.5  Radius of terminal line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + terms +
+                                         " stdevs above the mean.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+
+                    else if (LineArray[i].getLineRad() >= max) {
+                         fileout.println("4.3  Radius of line " + LineArray[i].getOrigionalLineNum() + " at " + LineArray[i].getLineRad() + " >= " + max +
+                                         ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+     //compute mean radius in a neuron
+     public double meanRad() {
+          double mean = 0.0;
+          if (this.NeuronSize > 0) {
+               double sum = 0.0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    sum += this.LineArray[i].getLineRad();
+               }
+               mean = sum / (this.NeuronSize);
+          }
+          return mean;
+     }
+
+     //comput mean radius for given type in a neuron
+     public double meanRad(int type) {
+          double mean = 0.0;
+          if (this.NeuronSize > 0) {
+               double sum = 0.0;
+               int count = 0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getLineType() == type) {
+                         sum += this.LineArray[i].getLineRad();
+                         ++count;
+                    }
+               }
+
+               mean = sum / count;
+          }
+          return mean;
+     }
+
+     //comput mean radius for terminal points for given type in a neuron f
+     public double meanTermRad(int type) {
+          double mean = 0.0;
+          if (this.NeuronSize > 0) {
+               double sum = 0.0;
+               int count = 0;
+
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if ( (this.LineArray[i].getLineType() == type) && (this.LineArray[i].getNumDaughters() == 0)) {
+                         sum += this.LineArray[i].getLineRad();
+                         ++count;
+                    }
+               }
+               mean = sum / count;
+          }
+          return mean;
+     }
+
+     //comput mean radius for terminal points in a neuron
+     public double meanTermRad() {
+          double mean = 0.0;
+          if (this.NeuronSize > 0) {
+               double sum = 0.0;
+               int count = 0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getNumDaughters() == 0) {
+                         sum += this.LineArray[i].getLineRad();
+                         ++count;
+                    }
+               }
+               mean = sum / count;
+          }
+          return mean;
+     }
+
+     //compute standard deviaion of radii in a cell
+     public double stdevRad() {
+          double stdDev = 0.0;
+          if (this.NeuronSize > 1) {
+               double meanValue = this.meanRad();
+               double sum = 0.0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    double diff = LineArray[i].getLineRad() - meanValue;
+                    sum += diff * diff;
+               }
+               stdDev = Math.sqrt(sum / (this.NeuronSize - 1));
+          }
+          return stdDev;
+     }
+
+     //compute standard deviaion of radii for a given type in a cell
+     public double stdevRad(int type) {
+          double stdDev = 0.0;
+          int count = 0;
+          if (this.NeuronSize > 1) {
+               double meanValue = this.meanRad(type);
+               double sum = 0.0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getLineType() == type) {
+                         double diff = LineArray[i].getLineRad() - meanValue;
+                         sum += diff * diff;
+                         ++count;
+                    }
+               }
+               stdDev = Math.sqrt(sum / (count - 1));
+          }
+          return stdDev;
+     }
+
+     //compute standard deviaion of radii for terminal points  in a cell
+     public double stdevTermRad() {
+          double stdDev = 0.0;
+          int count = 0;
+          if (this.NeuronSize > 1) {
+               double meanValue = this.meanTermRad();
+               double sum = 0.0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getNumDaughters() == 0) {
+                         double diff = LineArray[i].getLineRad() - meanValue;
+                         sum += diff * diff;
+                         ++count;
+                    }
+               }
+               stdDev = Math.sqrt(sum / (count - 1));
+          }
+          return stdDev;
+     }
+
+//compute standard deviaion of radii for terminal points for a given type in a cell
+     public double stdevTermRad(int type) {
+          double stdDev = 0.0;
+          int count = 0;
+          if (this.NeuronSize > 1) {
+               double meanValue = this.meanTermRad(type);
+               double sum = 0.0;
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if ( (this.LineArray[i].getLineType() == type) && (this.LineArray[i].getNumDaughters() == 0)) {
+                         double diff = LineArray[i].getLineRad() - meanValue;
+                         sum += diff * diff;
+                         ++count;
+                    }
+               }
+               stdDev = Math.sqrt(sum / (count - 1));
+          }
+          return stdDev;
+     }
+
+//*********************************************bad seg length functions*************************************
+      public void badSegLengthMinStdev(PrintWriter fileout, double min, double stDevm) {
+           double mean = this.meanSegLength();
+           double stdev = this.stdevSegLength();
+           for (int i = 2; i < NeuronSize; ++i) {
+                if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                     fileout.println("2.5  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " <= " + min + " at " +
+                                     myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                     fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                }
+                if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) - mean >= stdev * stDevm) {
+                     fileout.println("2.4  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " >= " + stDevm + " stdevs above mean at " +
+                                     myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                     fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                }
+           }
+      }
+
+     public void badSegLengthMinStdev(PrintWriter fileout, double min, double stDevm, int type) {
+          double mean = this.meanSegLength(type);
+          double stdev = this.stdevSegLength(type);
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                         fileout.println("2.5  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " <= " + min + " at " +
+                                         myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) - mean >= stdev * stDevm) {
+                         fileout.println("2.4  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " >= " + stDevm + " stdevs above mean at " +
+                                         myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+     public void badSegLengthMinMax(PrintWriter fileout, double min, double max) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                    fileout.println("2.5  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " <= " + min + " at " +
+                                    myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+               if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) >= max) {
+                    fileout.println("2.4  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " >= " + max + " at " +
+                                    myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                    fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+               }
+          }
+     }
+
+     public void badSegLengthMinMax(PrintWriter fileout, double min, double max, int type) {
+          for (int i = 2; i < NeuronSize; ++i) {
+               if ( (LineArray[i].getLineType() == type)) {
+                    if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                         fileout.println("2.5  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " <= " + min + " at " +
+                                         myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+                    if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) >= max) {
+                         fileout.println("2.4  Length of segment ending at point " + LineArray[i].getOrigionalLineNum() + " >= " + max + " at " +
+                                         myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+//*********************************************bad seg length functions with small lines removed*************************************
+
+      public void badSegLengthMinFixStdev(PrintWriter fileout, double min, double stDevm) {
+           double mean = this.meanSegLength();
+           double stdev = this.stdevSegLength();
+           boolean firstTimeThrough = true;
+           boolean linesRemoved = true;
+           while (linesRemoved) {
+                linesRemoved = false;
+                for (int i = 2; i < NeuronSize; ++i) {
+                     if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                          fileout.println("2.5  Seg length ending at pt. " + this.LineArray[i].getOrigionalLineNum() + " <= " + min +
+                                          " at " + myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (removed");
+                          fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                          this.removeLine(i);
+                          linesRemoved = true;
+                     }
+                     if (firstTimeThrough) {
+                          if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) - mean >= stdev * stDevm) {
+                               fileout.println("2.4  Seg length ending at pt. " + LineArray[i].getOrigionalLineNum() + " >= " + stDevm + " stdevs above mean at " +
+                                               myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                               fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                          }
+                     }
+                }
+                firstTimeThrough = false;
+           }
+      }
+
+     public void badSegLengthMinFixStdev(PrintWriter fileout, double min, double stDevm, int type) {
+          double mean = this.meanSegLength(type);
+          double stdev = this.stdevSegLength(type);
+          boolean firstTimeThrough = true;
+          boolean linesRemoved = true;
+          while (linesRemoved) {
+               linesRemoved = false;
+               for (int i = 2; i < NeuronSize; ++i) {
+                    if ( (LineArray[i].getLineType() == type)) {
+                         if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                              fileout.println("2.5  Seg length ending at pt. " + this.LineArray[i].getOrigionalLineNum() + " <= " + min +
+                                              " at " + myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (removed)");
+                              fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                              this.removeLine(i);
+                              linesRemoved = true;
+                         }
+                         if (firstTimeThrough) {
+                              if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) - mean >= stdev * stDevm) {
+                                   fileout.println("2.4  Seg length ending at pt. " + LineArray[i].getOrigionalLineNum() + " >= " + stDevm + " stdevs above mean at " +
+                                     myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                                   fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                              }
+                         }
+                    }
+               }
+               firstTimeThrough = false;
+          }
+     }
+
+     public void badSegLengthMinFixMax(PrintWriter fileout, double min, double max) {
+          double mean = this.meanSegLength();
+          double stdev = this.stdevSegLength();
+          boolean firstTimeThrough = true;
+          boolean linesRemoved = true;
+          while (linesRemoved) {
+               linesRemoved = false;
+               for (int i = 2; i < NeuronSize; ++i) {
+                    if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                         fileout.println("2.5  Seg length ending at pt. " + this.LineArray[i].getOrigionalLineNum() + " <= " + min +
+                                         " at " + myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (removed)");
+                         fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                         this.removeLine(i);
+                         linesRemoved = true;
+                    }
+                    if (firstTimeThrough) {
+                         if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) >= max) {
+                              fileout.println("2.4  Seg length ending at pt. " + LineArray[i].getOrigionalLineNum() + " >= " + max + " at " +
+                                              myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                              fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                         }
+                    }
+               }
+               firstTimeThrough = false;
+          }
+     }
+
+     public void badSegLengthMinFixMax(PrintWriter fileout, double min, double max, int type) {
+          double mean = this.meanSegLength(type);
+          double stdev = this.stdevSegLength(type);
+          boolean firstTimeThrough = true;
+          boolean linesRemoved = true;
+          while (linesRemoved) {
+               linesRemoved = false;
+               for (int i = 2; i < NeuronSize; ++i) {
+                    if ( (LineArray[i].getLineType() == type)) {
+                         if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) <= min) {
+                              fileout.println("2.5  Seg length ending at pt. " + this.LineArray[i].getOrigionalLineNum() + " <= " + min +
+                                              " at " + myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (removed)");
+                              fileout.println("     A       X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                              this.removeLine(i);
+                              linesRemoved = true;
+                         }
+                         if (firstTimeThrough) {
+                              if (this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) >= max) {
+                                   fileout.println("2.4  Seg length ending at pt. " + LineArray[i].getOrigionalLineNum() + " >= " + max + " at " +
+                                     myFormatter.format(this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()])) + ".  (no action taken)");
+                                   fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                              }
+                         }
+                    }
+               }
+               firstTimeThrough = false;
+          }
+     }
+
+//********************************************************************************************************************
+
+      public double meanSegLength() {
+           double mean = 0.0;
+           if (this.NeuronSize > 0) {
+                double sum = 0.0;
+                for (int i = 2; i < this.NeuronSize; i++) {
+                     sum += this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]);
+                }
+                mean = sum / (this.NeuronSize);
+           }
+           return mean;
+      }
+
+     public double meanSegLength(int type) {
+          double mean = 0.0;
+          if (this.NeuronSize > 0) {
+               double sum = 0.0;
+               int count = 0;
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getLineType() == type) {
+                         sum += this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]);
+                         ++count;
+                    }
+               }
+               mean = sum / count;
+          }
+          return mean;
+     }
+
+     public double stdevSegLength() {
+          double stdDev = 0.0;
+          if (this.NeuronSize > 1) {
+               double meanValue = this.meanSegLength();
+               double sum = 0.0;
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    double diff = this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) - meanValue;
+                    sum += diff * diff;
+               }
+               stdDev = Math.sqrt(sum / (this.NeuronSize - 1));
+          }
+          return stdDev;
+     }
+
+     public double stdevSegLength(int type) {
+          double stdDev = 0.0;
+          int count = 0;
+          if (this.NeuronSize > 1) {
+               double meanValue = this.meanSegLength(type);
+               double sum = 0.0;
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getLineType() == type) {
+                         double diff = this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) - meanValue;
+                         sum += diff * diff;
+                         ++count;
+                    }
+               }
+               stdDev = Math.sqrt(sum / (count - 1));
+          }
+          return stdDev;
+     }
+
+     public void SetPatternOut(String SPO) {
+          PatternOut = SPO;
+     }
+
+//find 2.1
+     public void findTrifurcations(PrintWriter fileout) {
+          if (this.NeuronSize > 0) {
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getNumDaughters() > 2) {
+                         fileout.println("2.1  Line " + LineArray[i].getOrigionalLineNum() + " has " + this.LineArray[i].getNumDaughters() + " daughters.  Type is " +
+                                         LineArray[i].getLineType() + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+//find 2.3
+     public void badLinks(PrintWriter fileout) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if ( (this.getLink(i) >= i) || (this.getLink(i) < -1)) {
+                         fileout.println("2.3  Line " + LineArray[i].getOrigionalLineNum() + " links to " + LineArray[this.getLink(i)].getOrigionalLineNum() +
+                                         ".  Last line num is " + this.NeuronSize + "  Type is " + LineArray[i].getLineType() + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+//find 4.4
+     public void badPositiveTaper(PrintWriter fileout, double ratiolimit) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if ( (this.getRad(i) / this.getRad(this.getLink(i))) >= ratiolimit) {
+                         fileout.println("4.4  Line " + LineArray[i].getOrigionalLineNum() + " of rad " + this.getRad(i) + " links to " +
+                                         LineArray[this.getLink(i)].getOrigionalLineNum() + " of rad " + this.getRad(this.getLink(i)) + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+//find 4.4
+     public void badNegativeTaper(PrintWriter fileout, double ratiolimit) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if ( (this.getRad(this.getLink(i)) / this.getRad(i)) >= ratiolimit) {
+                         fileout.println("4.4  Line " + LineArray[i].getOrigionalLineNum() + " of rad " + this.getRad(i) + " links to " +
+                                         LineArray[this.getLink(i)].getOrigionalLineNum() + " of rad " + this.getRad(this.getLink(i)) + ".  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+//find 2.7
+     public void includedSideBranch(PrintWriter fileout) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if ( (this.getRad(i) >= this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) && (this.LineArray[i].getNumDaughters() == 0) &&
+                          (this.LineArray[this.LineArray[i].getLineLink()].getNumDaughters() == 2))) {
+                         fileout.println("2.7  Line " + LineArray[i].getOrigionalLineNum() + " of rad " + this.getRad(i) + " is an included side branch.  (no action taken)");
+                         fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                    }
+               }
+          }
+     }
+
+//find 2.7
+     public void includedSideBranchFix(PrintWriter fileout) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if ( (this.getRad(i) >= this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) && (this.LineArray[i].getNumDaughters() == 0) &&
+                          (this.LineArray[this.LineArray[i].getLineLink()].getNumDaughters() == 2))) {
+                         fileout.println("2.7  Line " + LineArray[i].getOrigionalLineNum() + " of rad " + this.getRad(i) + " is an included side branch.  (removed)");
+                         fileout.println("     A      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                         this.removeLine(i);
+                    }
+               }
+          }
+     }
+
+     //find 2.7
+     public void includedSideBranch(PrintWriter fileout, int typeToDo) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (this.getType(i) == typeToDo) {
+                         if ( (this.getRad(i) >= this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) && (this.LineArray[i].getNumDaughters() == 0) &&
+                               (this.LineArray[this.LineArray[i].getLineLink()].getNumDaughters() == 2))) {
+                              fileout.println("2.7  Line " + LineArray[i].getOrigionalLineNum() + " of rad " + this.getRad(i) + " is an included side branch.  (no action taken)");
+                              fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                         }
+                    }
+               }
+          }
+     }
+
+//find 2.7
+     public void includedSideBranchFix(PrintWriter fileout, int typeToDo) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (this.getType(i) == typeToDo) {
+                         if ( (this.getRad(i) >= this.LineArray[i].getDistance(LineArray[LineArray[i].getLineLink()]) && (this.LineArray[i].getNumDaughters() == 0) &&
+                               (this.LineArray[this.LineArray[i].getLineLink()].getNumDaughters() == 2))) {
+                              fileout.println("2.7  Line " + LineArray[i].getOrigionalLineNum() + " of rad " + this.getRad(i) + " is an included side branch.  (removed)");
+                              fileout.println("     A      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                              this.removeLine(i);
+                         }
+                    }
+               }
+          }
+     }
+
+     //find 2.6
+     public void overlappingPoints(PrintWriter fileout) {
+          if (this.NeuronSize > 0) {
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    for (int j = i + 1; j < this.NeuronSize; j++) {
+                         if ( (this.getX(j) == this.getX(i)) && (this.getY(j) == this.getY(i)) && (this.getZ(j) == this.getZ(i))) {
+                              fileout.println("2.6  Line " + LineArray[i].getOrigionalLineNum() + " and line " + LineArray[j].getOrigionalLineNum() +
+                                              " have the same coordinates.  (no action taken)");
+                              fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                         }
+                    }
+               }
+          }
+     }
+     //find 2.6
+         public void overlappingPoints(PrintWriter fileout, int typetodo) {
+              if (this.NeuronSize > 0) {
+                   for (int i = 1; i < this.NeuronSize; i++) {
+                        if (this.getType(i) == typetodo){
+                             for (int j = i + 1; j < this.NeuronSize; j++) {
+                                  if ( (this.getX(j) == this.getX(i)) && (this.getY(j) == this.getY(i)) && (this.getZ(j) == this.getZ(i))) {
+                                       fileout.println("2.6  Line " + LineArray[i].getOrigionalLineNum() + " and line " + LineArray[j].getOrigionalLineNum() +
+                                         " have the same coordinates.  (no action taken)");
+                                       fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                                  }
+                             }
+                        }
+                   }
+              }
+         }
+
+//find 3.3
+     public void badSoma(PrintWriter fileout) {
+          if (this.NeuronSize > 0) {
+               this.setDaughterNums();
+               int numsomadaughters = 0;
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (this.getType(i) == 1) {
+                         if (this.LineArray[i].getNumDaughters() >= 2) {
+                              for (int j = i; j < this.NeuronSize; j++) {
+                                   if (this.getLink(j) == i && this.getType(j) == 1) {
+                                        ++numsomadaughters;
+                                   }
+                              }
+                              if (numsomadaughters >= 2) {
+                                   fileout.println("3.3  Soma at line " + LineArray[i].getOrigionalLineNum() + " has 2 or more daughters also of type 1.  (no action taken)");
+                                   fileout.println("     B1      X, Y, Z:  " + this.getX(i) + "  " + this.getY(i) + "  " + this.getZ(i));
+                              }
+                         }
+                    }
+               }
+          }
+     }
+
+     public void setDaughterNums() {
+          if (this.NeuronSize > 2) {
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    this.LineArray[i].setNumDaughters(0);
+               }
+
+               for (int i = 2; i < this.NeuronSize; i++) {
+   //                 System.out.println(i +"  "+this.getLink(i));
+                    this.LineArray[this.getLink(i)].setNumDaughters(this.LineArray[this.getLink(i)].getNumDaughters() + 1);
+               }
+          }
+     }
+
+     public void moveEndLineToBeginning() {
+          if (this.NeuronSize > 0) {
+               SwcLine tempLine = new SwcLine();
+               tempLine = this.LineArray[1];
+               this.LineArray[1] = this.LineArray[this.NeuronSize];
+               this.LineArray[1].setLineNum(1);
+               this.LineArray[1].setLineLink( -1);
+               for (int i = 2; i < this.NeuronSize - 1; i++) {
+                    this.LineArray[i] = tempLine;
+                    this.LineArray[i].setLineNum(i);
+                    this.LineArray[i].setLineLink(this.getLink(i) + 1);
+                    tempLine = this.LineArray[i + 1];
+               }
+               this.LineArray[this.NeuronSize] = tempLine;
+               this.LineArray[this.NeuronSize].setLineNum(this.NeuronSize);
+               this.LineArray[this.NeuronSize].setLineLink(this.getLink(this.NeuronSize) + 1);
+          }
+     }
+
+     public void removeLine(int lineToDel) {
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (i >= lineToDel) {
+                         int tempLink = this.LineArray[i].getLineLink();
+                         this.LineArray[i] = this.LineArray[i + 1];
+                         this.LineArray[i].setLineNum(i);
+                         if (this.LineArray[i].getLineLink() >= lineToDel) {
+                              this.LineArray[i].setLineLink(this.LineArray[i].getLineLink() - 1);
+                         }
+                         if (i == lineToDel) {
+                              if (tempLink < lineToDel - 1) {
+                                   this.LineArray[i].setLineLink(tempLink);
+                              }
+                         }
+                    }
+
+               }
+               this.LineArray[this.NeuronSize] = null;
+               this.NeuronSize = this.NeuronSize - 1;
+          }
+     }
+
+     public void removeLines(int firstToDel, int lastToDel) {
+          if (this.NeuronSize > 0) {
+               for (int i = lastToDel; i >= firstToDel; i--) {
+                    this.removeLine(i);
+               }
+          }
+     }
+
+     public int countType(int typeToCount) {
+          int count = 0;
+          if (this.NeuronSize > 0) {
+               for (int i = 2; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getLineType() == typeToCount) {
+                         ++count;
+                    }
+               }
+          }
+          return count;
+     }
+
+     public int getFirstDaughterNumType(int lineArraySub) {
+          if (this.NeuronSize > 0) {
+               for (int i = 1; i < this.NeuronSize; i++) {
+                    if (this.LineArray[i].getLineLink() == lineArraySub) {
+                         return this.LineArray[i].getLineType();
+                    }
+               }
+          }
+          return -1;
+     }
+
+     //output swc file into given print stream, header information added
+     public void writeSWC(PrintWriter swcOut, double version) {
+          if (this.NeuronSize > 0) {
+               swcOut.println("# Origional file " + this.FileName + " edited using StdSwc version " + version + ".  See StdSwc" + version + ".doc for more information.");
+               swcOut.println("#");
+               for (int i = 1; i <= this.CommentSize; i++) {
+                    swcOut.println(CommentLineArray[i]);
+               }
+               for (int i = 1; i <= this.NeuronSize; i++) {
+                    swcOut.println(i + " " + this.getType(i) + " " + this.getX(i) + " " + this.getY(i) + " " + this.getZ(i) + " " + this.getRad(i) + " " + this.getLink(i));
+                    for (int j = 0; j < 5000; ++j) {
+                    }
+               }
+          }
+     }
+
+     //output swc file into given print stream, extensive header information added
+     public void writeSWC(PrintWriter swcOut, double version, String todaysDate, String userName, String errorFile) {
+          if (this.NeuronSize > 0) {
+               swcOut.println("# Original file " + this.FileName + " edited by " + userName + " using StdSwc version " + version + " on " + todaysDate + ".");
+               swcOut.println("# Irregularities and fixes documented in " + errorFile + ".  See StdSwc" + version + ".doc for more information.");
+               swcOut.println("#");
+               for (int i = 1; i <= this.CommentSize; i++) {
+                    swcOut.println(CommentLineArray[i]);
+               }
+               for (int i = 1; i <= this.NeuronSize; i++) {
+                    swcOut.println(i + " " + this.getType(i) + " " + this.getX(i) + " " + this.getY(i) + " " + this.getZ(i) + " " + this.getRad(i) + " " + this.getLink(i));
+                    for (int j = 0; j < 5000; ++j) {
+                    }
+               }
+          }
+     }
+
+     //output swc file into given print stream, no header information added
+     public void writeSWC(PrintWriter swcOut) {
+          if (this.NeuronSize > 0) {
+               for (int i = 1; i <= this.CommentSize; i++) {
+                    swcOut.println(CommentLineArray[i]);
+               }
+               for (int i = 1; i <= this.NeuronSize; i++) {
+                    swcOut.println(i + " " + this.getType(i) + " " + this.getX(i) + " " + this.getY(i) + " " + this.getZ(i) + " " + this.getRad(i) + " " + this.getLink(i));
+                    for (int j = 0; j < 5000; ++j) {
+                    }
+               }
+          }
+     }
+}

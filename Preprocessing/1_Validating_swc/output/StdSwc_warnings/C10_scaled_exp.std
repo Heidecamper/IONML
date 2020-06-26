@@ -1,0 +1,151 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C10_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 17 at 1.98682 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  64.8604  49.92086  31.825035
+4.3  Radius of line 34 at 1.98 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  61.51035  49.478  36.91545
+4.3  Radius of line 35 at 2.10375 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  61.29079  49.32246  37.049925
+4.3  Radius of line 36 at 2.13125 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.89413  49.3471  37.12863
+4.3  Radius of line 37 at 2.13125 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.566  49.35359  37.31376
+4.3  Radius of line 38 at 2.11068 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.4439  49.34578  37.67412
+4.3  Radius of line 39 at 2.0075 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.15185  49.35722  37.911555
+4.3  Radius of line 911 at 2.02818 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  61.51717  49.35139  37.217895
+4.3  Radius of line 912 at 2.07625 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  61.29222  49.18793  37.288185
+4.3  Radius of line 913 at 2.11068 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.94506  49.12809  37.382895
+4.3  Radius of line 914 at 2.13818 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.71703  49.01171  37.49097
+4.3  Radius of line 915 at 2.17932 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.54543  48.96012  37.766355
+4.3  Radius of line 916 at 2.21375 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.4681  48.81756  38.051475
+4.3  Radius of line 917 at 2.18625 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.31982  48.74419  38.363655
+4.3  Radius of line 918 at 2.09 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  60.22874  48.55609  38.62881
+4.3  Radius of line 1537 at 1.98682 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  71.26922  58.75331  23.824185
+4.3  Radius of line 1538 at 2.0075 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  71.25129  58.78224  23.218635
+4.3  Radius of line 1539 at 2.00068 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  71.45226  58.7719  22.85745
+4.3  Radius of line 1607 at 2.04875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  71.24007  58.70799  24.571305
+4.3  Radius of line 1608 at 2.13125 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  71.21048  58.29934  24.594735
+4.3  Radius of line 1609 at 2.20682 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  71.22104  57.85692  24.62262
+4.3  Radius of line 1610 at 6.69625 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.73786  52.62675  24.14874
+4.5  Radius of terminal line 1611 at 6.84068 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.47243  51.73377  24.162105
+4.3  Radius of line 1612 at 6.94375 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.23923  51.4151  19.647375
+4.3  Radius of line 1613 at 6.8475 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.41765  51.82023  19.4898
+4.3  Radius of line 1614 at 6.67568 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.49641  52.22151  19.48683
+4.3  Radius of line 1615 at 2.57818 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  77.31658  56.31142  27.393465
+4.3  Radius of line 1616 at 2.42 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  77.61754  56.7083  27.57777
+4.3  Radius of line 1617 at 2.72932 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  77.7612  56.13047  26.99565
+4.3  Radius of line 1618 at 2.77068 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  78.20934  56.13498  26.999115
+4.3  Radius of line 1619 at 2.64682 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  78.69202  56.14103  27.03525
+4.3  Radius of line 1620 at 2.37182 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  79.13411  56.21187  27.17022
+4.3  Radius of line 1621 at 2.00068 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  79.41923  56.34849  27.46854
+4.3  Radius of line 4259 at 1.99375 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.38124  42.42161  38.045535
+4.3  Radius of line 4260 at 2.04875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.67835  42.44075  37.898685
+4.3  Radius of line 4261 at 2.1175 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.85864  42.46726  37.63353
+4.3  Radius of line 4262 at 2.12432 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.86425  42.58386  37.26426
+4.3  Radius of line 4263 at 2.04182 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  75.86084  42.73632  36.84516
+4.3  Radius of line 7878 at 2.06932 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  61.43203  49.58294  37.00059
+4.3  Radius of line 7879 at 2.04182 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  61.24019  49.78963  37.02468
+2.5  Length of segment ending at point 93 <= 0.1 at 0.0738.  (no action taken)
+     B1      X, Y, Z:  43.88604  50.34271  41.82585
+2.5  Length of segment ending at point 633 <= 0.1 at 0.0873.  (no action taken)
+     B1      X, Y, Z:  51.32039  39.8794  13.730475
+2.5  Length of segment ending at point 1059 <= 0.1 at 0.08.  (no action taken)
+     B1      X, Y, Z:  48.07627  54.07545  9.77229
+2.5  Length of segment ending at point 1606 <= 0.1 at 0.0983.  (no action taken)
+     B1      X, Y, Z:  75.24275  48.97915  0.735405
+2.4  Length of segment ending at point 1610 >= 6.0 stdevs above mean at 6.9268.  (no action taken)
+     B1      X, Y, Z:  75.73786  52.62675  24.14874
+2.4  Length of segment ending at point 1612 >= 6.0 stdevs above mean at 6.3959.  (no action taken)
+     B1      X, Y, Z:  75.23923  51.4151  19.647375
+2.4  Length of segment ending at point 1615 >= 6.0 stdevs above mean at 9.086.  (no action taken)
+     B1      X, Y, Z:  77.31658  56.31142  27.393465
+2.5  Length of segment ending at point 1825 <= 0.1 at 0.0695.  (no action taken)
+     B1      X, Y, Z:  50.60814  77.60445  45.72744
+2.5  Length of segment ending at point 2306 <= 0.1 at 0.0908.  (no action taken)
+     B1      X, Y, Z:  37.56401  53.27091  62.655285
+2.5  Length of segment ending at point 2724 <= 0.1 at 0.084.  (no action taken)
+     B1      X, Y, Z:  69.3088  80.3319  23.49105
+2.4  Length of segment ending at point 2805 >= 6.0 stdevs above mean at 12.3127.  (no action taken)
+     B1      X, Y, Z:  76.69123  63.35175  14.35929
+2.5  Length of segment ending at point 3217 <= 0.1 at 0.0718.  (no action taken)
+     B1      X, Y, Z:  37.70591  65.02331  45.292335
+2.4  Length of segment ending at point 4268 >= 6.0 stdevs above mean at 12.5215.  (no action taken)
+     B1      X, Y, Z:  76.57089  43.65482  36.577035
+2.5  Length of segment ending at point 5678 <= 0.1 at 0.0778.  (no action taken)
+     B1      X, Y, Z:  59.64563  54.00296  23.428845
+2.5  Length of segment ending at point 5744 <= 0.1 at 0.092.  (no action taken)
+     B1      X, Y, Z:  60.654  42.31337  33.43989
+2.4  Length of segment ending at point 8054 >= 6.0 stdevs above mean at 8.9861.  (no action taken)
+     B1      X, Y, Z:  67.52163  43.54658  27.69063
+2.5  Length of segment ending at point 8340 <= 0.1 at 0.0947.  (no action taken)
+     B1      X, Y, Z:  58.707  55.92631  3.63231
+2.7  Line 2517 of rad 0.33 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  30.92221  46.64187  65.135565
+2.7  Line 6343 of rad 0.275 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  62.50541  36.90995  44.394735
+2.7  Line 7877 of rad 0.9625 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  60.29386  73.46977  16.47294
+2.7  Line 8053 of rad 1.43682 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  67.98044  49.97355  27.815205
+4.4  Line 137 of rad 0.35068 links to 136 of rad 0.11.  (no action taken)
+     B1      X, Y, Z:  40.75984  37.81789  38.632605
+4.4  Line 883 of rad 0.44 links to 882 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  40.37385  37.9753  12.285405
+4.4  Line 969 of rad 0.4675 links to 968 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  51.27936  37.86574  35.59974
+4.4  Line 1022 of rad 0.53625 links to 1021 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  48.0425  42.94026  16.04229
+4.4  Line 1610 of rad 6.69625 links to 1609 of rad 2.20682.  (no action taken)
+     B1      X, Y, Z:  75.73786  52.62675  24.14874
+4.4  Line 3119 of rad 0.66 links to 3118 of rad 0.33.  (no action taken)
+     B1      X, Y, Z:  61.996  64.39719  45.236565
+4.4  Line 4013 of rad 1.39568 links to 4012 of rad 0.44.  (no action taken)
+     B1      X, Y, Z:  75.5161  43.8559  40.61013
+4.4  Line 5178 of rad 1.6225 links to 5177 of rad 0.66.  (no action taken)
+     B1      X, Y, Z:  61.24679  42.54085  39.55182
+4.4  Line 5804 of rad 0.97625 links to 5803 of rad 0.44.  (no action taken)
+     B1      X, Y, Z:  60.83858  44.90915  29.740425
+2.1  Line 1 has 4 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  74.97457  47.66795  24.82392
+2.1  Line 34 has 3 daughters.  Type is 3.  (no action taken)
+     B1      X, Y, Z:  61.51035  49.478  36.91545
+ 
+ 

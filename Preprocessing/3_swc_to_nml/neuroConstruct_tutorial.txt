@@ -1,0 +1,23 @@
+neuroConstruct tutorial
+
+Step 1: Start neuroConstruct.
+	for linux: bash ./"Installation_path"/nC.sh
+
+Step 2: Start a new project.
+	File -> New_project -> confirm. 
+	(Do not add any sample items to the project)
+
+Step 3: Load morphologies (.swc files) into neuroConstruct
+	Cell Types -> Add New Cell Type to Project...
+		Base Cell type: 		SWCMorphReader (importer of SWC (cvapp format) files)
+		Morphology File:  		Give location of .swc file
+		Name of new Cell type:	Any name will suffice.
+		Do not include any anatomical features 
+		Do not tick the daughters of somas inherit radii box
+
+Step 4: Go to export 
+	Export -> NeuroML -> Export to NeuroML v2beta5; run with jNeuroML
+
+Step 5: Go to the path where the nC project is stored and go to the folder generatedNeuroML2
+
+

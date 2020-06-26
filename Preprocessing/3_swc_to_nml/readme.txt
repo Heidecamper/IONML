@@ -1,0 +1,1 @@
+For the swc to nml conversion I used neuroConstruct. In the appendix of the thesis report is a clear description including fotos. This folder also contains the python script that builds a network out of the individual nml morphologies. You can add the parameters in the script to build a grid to your liking.

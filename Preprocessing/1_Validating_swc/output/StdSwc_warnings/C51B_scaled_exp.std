@@ -1,0 +1,37 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C51B_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 1476 at 7.6475 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  236.06474  119.72394  28.6494
+4.3  Radius of line 1763 at 3.42 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  229.96802  124.279  22.1862
+4.3  Radius of line 1764 at 3.49144 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  229.66592  124.3968  20.9874
+4.3  Radius of line 1765 at 3.4675 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  229.55382  124.35614  19.7874
+4.3  Radius of line 1766 at 3.44356 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  229.32164  124.36146  18.5883
+4.3  Radius of line 1767 at 3.39644 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  229.14532  124.36298  17.3781
+4.3  Radius of line 1768 at 3.325 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  228.86222  124.3702  16.2678
+2.4  Length of segment ending at point 73 >= 6.0 stdevs above mean at 2.7242.  (no action taken)
+     B1      X, Y, Z:  293.93266  88.62854  37.8384
+2.4  Length of segment ending at point 76 >= 6.0 stdevs above mean at 2.4866.  (no action taken)
+     B1      X, Y, Z:  296.74504  85.861  37.4226
+2.4  Length of segment ending at point 686 >= 6.0 stdevs above mean at 3.0456.  (no action taken)
+     B1      X, Y, Z:  244.8549  106.62762  31.4361
+2.4  Length of segment ending at point 706 >= 6.0 stdevs above mean at 2.9603.  (no action taken)
+     B1      X, Y, Z:  264.48  98.8  26.1
+2.4  Length of segment ending at point 707 >= 6.0 stdevs above mean at 2.7323.  (no action taken)
+     B1      X, Y, Z:  262.29842  97.15498  26.1054
+2.4  Length of segment ending at point 993 >= 6.0 stdevs above mean at 2.4791.  (no action taken)
+     B1      X, Y, Z:  130.46274  179.9034  72.0543
+2.7  Line 59 of rad 1.52 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  280.44  95.76  35.7
+2.1  Line 1 has 6 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  235.47346  119.46858  28.0224
+ 
+ 

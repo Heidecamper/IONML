@@ -1,0 +1,37 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C15A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 1112 at 1.89 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  155.68035  55.85643  29.9691
+2.4  Length of segment ending at point 949 >= 6.0 stdevs above mean at 1.5226.  (no action taken)
+     B1      X, Y, Z:  161.49525  38.15385  37.9512
+2.7  Line 193 of rad 0.63 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  130.47825  81.51633  45.6627
+2.7  Line 1090 of rad 1.05 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  161.71911  48.52932  35.5347
+2.7  Line 1384 of rad 0.84 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  125.40486  85.11489  16.8123
+2.7  Line 3138 of rad 0.63 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  135.37566  91.30548  35.2494
+2.7  Line 3889 of rad 0.63 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  171.85245  44.05821  57.6117
+4.4  Line 1281 of rad 0.4725 links to 1280 of rad 0.21.  (no action taken)
+     B1      X, Y, Z:  113.39454  63.42672  22.7946
+4.4  Line 1551 of rad 0.86625 links to 1550 of rad 0.42.  (no action taken)
+     B1      X, Y, Z:  132.76704  68.38965  9.15465
+4.4  Line 2779 of rad 0.42 links to 2778 of rad 0.21.  (no action taken)
+     B1      X, Y, Z:  133.10766  64.00128  74.3991
+4.4  Line 3335 of rad 0.43302 links to 3334 of rad 0.21.  (no action taken)
+     B1      X, Y, Z:  82.54428  83.03715  49.4802
+4.4  Line 4286 of rad 0.538125 links to 4285 of rad 0.21.  (no action taken)
+     B1      X, Y, Z:  128.9589  64.20519  34.8432
+2.1  Line 1 has 4 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  147.37191  46.40895  59.9262
+2.1  Line 1449 has 3 daughters.  Type is 3.  (no action taken)
+     B1      X, Y, Z:  109.3323  79.07109  36.9195
+2.1  Line 1971 has 3 daughters.  Type is 3.  (no action taken)
+     B1      X, Y, Z:  173.96232  51.53757  70.6986
+ 
+ 

@@ -1,0 +1,47 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C32B_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 26 at 2.64 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  36.31716  27.73672  47.817675
+4.3  Radius of line 27 at 2.4475 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  36.62274  27.9862  47.848275
+4.3  Radius of line 28 at 2.29636 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  37.1481  27.84738  48.037725
+4.3  Radius of line 29 at 2.1175 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  37.30276  27.91844  48.758625
+4.3  Radius of line 344 at 2.18636 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  36.17614  28.17078  47.59245
+4.3  Radius of line 731 at 2.31 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  36.09012  27.70966  47.1888
+2.5  Length of segment ending at point 901 <= 0.1 at 0.0388.  (no action taken)
+     B1      X, Y, Z:  75.36474  75.22812  56.9934
+2.5  Length of segment ending at point 1321 <= 0.1 at 0.0648.  (no action taken)
+     B1      X, Y, Z:  103.22268  118.36154  65.793825
+2.4  Length of segment ending at point 1347 >= 6.0 stdevs above mean at 1.9915.  (no action taken)
+     B1      X, Y, Z:  104.3229  102.05404  67.284
+2.4  Length of segment ending at point 1348 >= 6.0 stdevs above mean at 1.9822.  (no action taken)
+     B1      X, Y, Z:  104.60626  100.3948  66.2373
+2.4  Length of segment ending at point 1349 >= 6.0 stdevs above mean at 1.8486.  (no action taken)
+     B1      X, Y, Z:  104.64278  98.67572  65.558475
+2.4  Length of segment ending at point 1461 >= 6.0 stdevs above mean at 1.6426.  (no action taken)
+     B1      X, Y, Z:  70.55422  24.9645  60.117975
+2.5  Length of segment ending at point 1702 <= 0.1 at 0.0507.  (no action taken)
+     B1      X, Y, Z:  31.62918  42.46792  33.915825
+2.5  Length of segment ending at point 1703 <= 0.1 at 0.036.  (no action taken)
+     B1      X, Y, Z:  31.62148  42.4798  33.88275
+2.5  Length of segment ending at point 1704 <= 0.1 at 0.0895.  (no action taken)
+     B1      X, Y, Z:  31.59046  42.50004  33.8013
+2.5  Length of segment ending at point 1705 <= 0.1 at 0.0377.  (no action taken)
+     B1      X, Y, Z:  31.59244  42.5051  33.76395
+2.7  Line 1671 of rad 0.825 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  24.75242  42.35924  17.14995
+4.4  Line 655 of rad 0.45364 links to 654 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  42.61444  108.25694  26.385075
+2.1  Line 1 has 4 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  34.9305  26.75178  28.398375
+2.1  Line 26 has 3 daughters.  Type is 3.  (no action taken)
+     B1      X, Y, Z:  36.31716  27.73672  47.817675
+ 
+ 

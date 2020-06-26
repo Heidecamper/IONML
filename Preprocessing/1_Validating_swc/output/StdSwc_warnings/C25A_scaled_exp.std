@@ -1,0 +1,29 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C25A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 31 at 2.1175 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  66.49104  69.34598  58.52115
+4.3  Radius of line 32 at 2.1725 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  65.99384  69.4276  58.7943
+4.3  Radius of line 33 at 2.2 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  65.77208  69.38272  59.50305
+4.3  Radius of line 34 at 2.2 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  65.54834  69.36864  60.122925
+4.3  Radius of line 35 at 2.2 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  65.43812  69.30726  60.8724
+4.3  Radius of line 36 at 2.2 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  65.57628  69.00014  60.9957
+4.3  Radius of line 517 at 2.10364 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  62.24548  74.83828  40.47255
+4.4  Line 1239 of rad 0.44 links to 1238 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  5.26856  171.18134  22.956525
+4.4  Line 1398 of rad 1.14136 links to 1397 of rad 0.44.  (no action taken)
+     B1      X, Y, Z:  60.01886  77.39644  38.954475
+4.4  Line 1918 of rad 0.4675 links to 1917 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  87.2751  33.5203  72.352575
+2.1  Line 1 has 5 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  67.2353  79.02444  44.4483
+ 
+ 

@@ -1,0 +1,11 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C25C_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.4  Line 1199 of rad 0.495 links to 1198 of rad 0.22.  (no action taken)
+     B1      X, Y, Z:  177.77672  137.7519  54.84465
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  134.86  95.04  44.325
+ 
+ 

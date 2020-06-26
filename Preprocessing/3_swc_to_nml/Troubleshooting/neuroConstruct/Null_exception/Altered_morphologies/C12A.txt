@@ -1,0 +1,13 @@
+Lines that cause the error:
+Line 313 in combination with line 312: 
+	312 3 142.232 95.1834 59.86845 1.3376 311
+	313 1 141.7942 95.281 60.067125 1.4 312
+	313 is a soma and has 312 (a dendrite) as parent
+
+Line 983 in combination with 982:
+	982 3 128.2264 90.8446 53.893575 1 981
+	983 1 128.1636 90.7016 54.6606 0.9876 982
+
+Line 1384 in combination with 1383:
+	1383 3 130.5034 80.3926 52.510275 1.25 1382
+	1384 1 130.895 80.6966 53.343 1 1383

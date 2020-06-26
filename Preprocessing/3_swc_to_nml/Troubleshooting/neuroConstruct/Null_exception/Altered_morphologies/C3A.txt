@@ -1,0 +1,4 @@
+Lines that cause the error:
+Line 5976 in combination with line 5975: 
+	5975 3 57.17309 53.79062 38.4684 1.2025 5974
+	5976 1 57.51889 53.66244 38.4244 1.04 5975

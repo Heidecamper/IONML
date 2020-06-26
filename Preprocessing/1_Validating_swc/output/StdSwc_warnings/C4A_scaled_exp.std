@@ -1,0 +1,57 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C4A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 1647 at 1.64125 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  55.86711  152.2534  29.6169
+4.3  Radius of line 1648 at 1.38944 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  55.36531  152.2209  29.5302
+2.4  Length of segment ending at point 382 >= 6.0 stdevs above mean at 0.8468.  (no action taken)
+     B1      X, Y, Z:  62.74528  112.25981  21.2109
+2.5  Length of segment ending at point 393 <= 0.1 at 0.0824.  (no action taken)
+     B1      X, Y, Z:  64.55787  110.53445  19.275
+2.5  Length of segment ending at point 1390 <= 0.1 at 0.0922.  (no action taken)
+     B1      X, Y, Z:  71.75298  123.67316  26.18265
+2.5  Length of segment ending at point 1444 <= 0.1 at 0.0861.  (no action taken)
+     B1      X, Y, Z:  80.44907  108.58757  21.855
+2.7  Line 749 of rad 0.65 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  65.30121  138.0886  31.73055
+2.7  Line 792 of rad 0.26 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  70.56192  124.3177  29.2854
+2.7  Line 1327 of rad 0.39 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  75.97837  129.09364  31.05855
+2.7  Line 1714 of rad 0.78 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  56.41285  150.4191  27.01935
+2.7  Line 1732 of rad 0.52 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  55.2656  146.9039  22.6704
+2.7  Line 2501 of rad 0.65 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  60.41802  167.3984  24.5271
+2.7  Line 2811 of rad 0.52806 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  107.74205  164.7802  20.5197
+2.7  Line 2934 of rad 0.39 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  105.47017  132.847  20.89035
+2.7  Line 3554 of rad 0.65 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  55.80068  145.1697  32.0565
+2.7  Line 3576 of rad 0.39 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  53.42142  137.6934  30.567
+4.4  Line 193 of rad 0.27625 links to 192 of rad 0.13.  (no action taken)
+     B1      X, Y, Z:  69.03871  150.3749  14.72715
+4.4  Line 699 of rad 0.34125 links to 698 of rad 0.13.  (no action taken)
+     B1      X, Y, Z:  69.6215  137.7688  39.5919
+4.4  Line 1271 of rad 0.31694 links to 1270 of rad 0.13.  (no action taken)
+     B1      X, Y, Z:  75.68951  130.416  30.79605
+4.4  Line 1623 of rad 0.26806 links to 1622 of rad 0.13.  (no action taken)
+     B1      X, Y, Z:  82.44106  113.88169  23.69295
+4.4  Line 2779 of rad 0.34125 links to 2778 of rad 0.13.  (no action taken)
+     B1      X, Y, Z:  118.93817  172.8207  34.59375
+4.4  Line 3011 of rad 0.52 links to 2986 of rad 0.26.  (no action taken)
+     B1      X, Y, Z:  107.45826  117.66976  23.88825
+4.4  Line 3328 of rad 0.27625 links to 3327 of rad 0.13.  (no action taken)
+     B1      X, Y, Z:  93.06843  165.7006  20.0931
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  59.22384  153.3441  30.51645
+2.1  Line 2142 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  60.89161  155.0289  28.7124
+ 
+ 

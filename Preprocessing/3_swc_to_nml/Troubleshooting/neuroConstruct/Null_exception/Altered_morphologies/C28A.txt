@@ -1,0 +1,4 @@
+Lines that cause the error:
+Line 1185 in combination with line 1184: 
+	1184 3 124.1464 106.6854 88.084125 1.4376 1183
+	1185 1 124.165 106.1972 88.064775 1 1184

@@ -1,0 +1,13 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C16_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+2.5  Length of segment ending at point 1485 <= 0.1 at 0.0989.  (no action taken)
+     B1      X, Y, Z:  76.17547  77.33776  11.5479
+2.7  Line 98 of rad 0.85 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  79.99248  90.38594  19.855125
+2.7  Line 1941 of rad 0.51 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  54.68594  75.90364  18.92835
+ 
+ 

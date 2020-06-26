@@ -1,0 +1,61 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C12A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 159 at 2.2624 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  138.4508  100.1472  58.2543
+4.3  Radius of line 160 at 2.1624 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  138.5618  100.284  57.374775
+4.3  Radius of line 269 at 2.15 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  135.3348  101.884  57.42
+4.3  Radius of line 270 at 2.2876 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  136.0952  101.8156  57.50595
+4.3  Radius of line 271 at 2.375 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  136.4976  101.7322  57.9735
+4.3  Radius of line 272 at 2.425 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  136.6602  101.6836  58.70385
+4.3  Radius of line 273 at 2.4124 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  137.3814  101.6804  58.80735
+4.3  Radius of line 274 at 2.375 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  138.2148  101.6524  58.730625
+4.3  Radius of line 275 at 2.3124 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  138.9638  101.7416  58.59405
+4.3  Radius of line 276 at 2.225 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  139.3224  101.7292  58.067775
+4.3  Radius of line 277 at 2.1376 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  139.4718  101.6978  57.362625
+4.3  Radius of line 278 at 2.0376 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  140.1162  101.8104  57.19185
+4.3  Radius of line 2047 at 2.175 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  152.0888  100.5674  9.6435
+4.3  Radius of line 2048 at 2.075 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  151.8196  100.9856  9.4779
+2.5  Length of segment ending at point 4210 <= 0.1 at 0.0759.  (no action taken)
+     B1      X, Y, Z:  134.2778  59.7004  72.30195
+1.2  Line 313 of type 1 links to incorrect type 3.  (no action taken)
+     B1      X, Y, Z:  141.7942  95.281  60.067125
+1.2  Line 983 of type 1 links to incorrect type 3.  (no action taken)
+     B1      X, Y, Z:  128.1636  90.7016  54.6606
+1.2  Line 1384 of type 1 links to incorrect type 3.  (no action taken)
+     B1      X, Y, Z:  130.895  80.6966  53.343
+2.7  Line 821 of rad 0.875 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  147.7634  103.5824  59.7195
+2.7  Line 4210 of rad 0.8 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  134.2778  59.7004  72.30195
+4.4  Line 253 of rad 0.8124 links to 252 of rad 0.2.  (no action taken)
+     B1      X, Y, Z:  136.3336  103.525  59.7204
+4.4  Line 2047 of rad 2.175 links to 2046 of rad 0.8.  (no action taken)
+     B1      X, Y, Z:  152.0888  100.5674  9.6435
+4.4  Line 5011 of rad 0.5376 links to 5010 of rad 0.2.  (no action taken)
+     B1      X, Y, Z:  151.3628  81.7386  73.199925
+4.4  Line 5605 of rad 0.8 links to 5604 of rad 0.4.  (no action taken)
+     B1      X, Y, Z:  107.9306  107.6948  16.6977
+4.4  Line 5700 of rad 0.4624 links to 5699 of rad 0.2.  (no action taken)
+     B1      X, Y, Z:  124.27  118.5742  37.812375
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  138.381  93.1378  70.7463
+2.1  Line 2 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  138.4  93.0  69.975
+ 
+ 

@@ -1,0 +1,25 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C28B_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 469 at 2.6624 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  138.7808  79.6816  45.85185
+4.3  Radius of line 3469 at 2.9 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  149.0576  81.463  74.29635
+4.3  Radius of line 3470 at 2.7124 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  149.6454  81.2286  74.2536
+2.5  Length of segment ending at point 2030 <= 0.1 at 0.0723.  (no action taken)
+     B1      X, Y, Z:  177.496  111.8396  105.104025
+2.7  Line 775 of rad 1.0 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  124.3744  106.4564  64.999575
+4.4  Line 1816 of rad 0.8125 links to 1815 of rad 0.2.  (no action taken)
+     B1      X, Y, Z:  126.9268  149.429  62.825625
+4.4  Line 2192 of rad 0.475 links to 2191 of rad 0.2.  (no action taken)
+     B1      X, Y, Z:  176.5016  113.186  70.4826
+4.4  Line 3469 of rad 2.9 links to 3468 of rad 1.2.  (no action taken)
+     B1      X, Y, Z:  149.0576  81.463  74.29635
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  137.2268  72.7792  61.5186
+ 
+ 

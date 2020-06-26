@@ -1,0 +1,11 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C46B_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.4  Line 1579 of rad 0.62 links to 1578 of rad 0.31.  (no action taken)
+     B1      X, Y, Z:  236.19086  161.63896  77.028
+2.1  Line 1 has 4 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  163.95311  149.95878  80.8269
+ 
+ 

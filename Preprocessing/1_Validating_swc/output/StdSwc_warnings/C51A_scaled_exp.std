@@ -1,0 +1,21 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C51A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 984 at 6.05625 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  96.60436  116.91536  48.8334
+4.3  Radius of line 985 at 5.81875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  96.59372  116.91232  47.6871
+4.3  Radius of line 986 at 5.4625 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  96.71912  117.02404  46.5153
+4.3  Radius of line 987 at 4.9875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  96.81146  117.06394  45.357
+4.3  Radius of line 988 at 4.48875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  96.82286  117.19504  44.2836
+4.4  Line 984 of rad 6.05625 links to 983 of rad 1.9.  (no action taken)
+     B1      X, Y, Z:  96.60436  116.91536  48.8334
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  100.0331  117.0343  64.0716
+ 
+ 

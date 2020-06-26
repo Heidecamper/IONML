@@ -1,0 +1,29 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C49B_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+2.4  Length of segment ending at point 1327 >= 6.0 stdevs above mean at 19.3943.  (no action taken)
+     B1      X, Y, Z:  159.98  110.58  95.4
+2.5  Length of segment ending at point 1874 <= 0.1 at 0.0537.  (no action taken)
+     B1      X, Y, Z:  188.11102  36.9284  139.0239
+2.5  Length of segment ending at point 1964 <= 0.1 at 0.0881.  (no action taken)
+     B1      X, Y, Z:  165.0226  53.08904  136.5696
+2.5  Length of segment ending at point 1965 <= 0.1 at 0.0846.  (no action taken)
+     B1      X, Y, Z:  165.05414  53.07878  136.64745
+2.4  Length of segment ending at point 2295 >= 6.0 stdevs above mean at 4.2701.  (no action taken)
+     B1      X, Y, Z:  184.74156  239.35706  76.8204
+2.5  Length of segment ending at point 2941 <= 0.1 at 0.0985.  (no action taken)
+     B1      X, Y, Z:  212.48498  75.9696  107.27415
+2.7  Line 2095 of rad 1.68644 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  95.43434  76.58064  46.92735
+4.4  Line 1230 of rad 0.76 links to 1229 of rad 0.38.  (no action taken)
+     B1      X, Y, Z:  147.3621  70.56676  85.60755
+4.4  Line 1272 of rad 0.83144 links to 1271 of rad 0.38.  (no action taken)
+     B1      X, Y, Z:  138.15812  99.06068  76.85415
+4.4  Line 1720 of rad 0.855 links to 1719 of rad 0.38.  (no action taken)
+     B1      X, Y, Z:  48.04112  47.7128  55.84365
+2.1  Line 1 has 4 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  173.34498  98.38048  102.3777
+ 
+ 

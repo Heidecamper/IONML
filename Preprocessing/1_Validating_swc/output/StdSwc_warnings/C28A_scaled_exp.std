@@ -1,0 +1,39 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C28A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 1243 at 4.9624 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  122.2236  119.9688  96.562575
+4.3  Radius of line 1244 at 4.5624 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  121.6428  120.5492  96.9552
+4.3  Radius of line 1245 at 4.0876 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  121.1264  120.984  97.277175
+4.3  Radius of line 1246 at 3.575 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  120.8062  121.2008  97.173675
+4.3  Radius of line 1247 at 3.075 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  120.6136  121.867  97.2828
+4.3  Radius of line 1248 at 2.6376 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  120.489  122.602  97.343775
+2.4  Length of segment ending at point 1243 >= 6.0 stdevs above mean at 2.0391.  (no action taken)
+     B1      X, Y, Z:  122.2236  119.9688  96.562575
+2.4  Length of segment ending at point 3757 >= 6.0 stdevs above mean at 1.4378.  (no action taken)
+     B1      X, Y, Z:  80.9768  91.2188  44.713575
+2.4  Length of segment ending at point 3758 >= 6.0 stdevs above mean at 1.4864.  (no action taken)
+     B1      X, Y, Z:  80.2828  92.532  44.77185
+2.5  Length of segment ending at point 3767 <= 0.1 at 0.0942.  (no action taken)
+     B1      X, Y, Z:  79.4246  94.0042  44.68095
+1.2  Line 1185 of type 1 links to incorrect type 3.  (no action taken)
+     B1      X, Y, Z:  124.165  106.1972  88.064775
+2.7  Line 1312 of rad 1.2 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  105.8738  153.3226  99.602325
+4.4  Line 1067 of rad 0.875 links to 1066 of rad 0.4.  (no action taken)
+     B1      X, Y, Z:  102.4526  88.5574  85.79115
+4.4  Line 3390 of rad 1.65 links to 3389 of rad 0.6.  (no action taken)
+     B1      X, Y, Z:  146.9052  74.5664  93.741075
+4.4  Line 3728 of rad 0.6 links to 3727 of rad 0.2.  (no action taken)
+     B1      X, Y, Z:  88.2  84.4  42.3
+2.1  Line 1 has 4 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  128.3942  116.7616  81.5085
+ 
+ 

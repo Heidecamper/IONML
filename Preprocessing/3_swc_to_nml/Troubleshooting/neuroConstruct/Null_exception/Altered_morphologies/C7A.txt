@@ -1,0 +1,4 @@
+Lines that cause the error:
+Line 3251 in combination with line 3250: 
+	3250 3 55.9206 129.6498 19.703475 1.525 3249
+	3251 1 55.8 129.8 19.35 1.6 3250

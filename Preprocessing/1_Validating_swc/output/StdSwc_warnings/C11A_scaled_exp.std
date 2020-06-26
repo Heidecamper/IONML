@@ -1,0 +1,19 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C11A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 2326 at 2.05428 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  130.98486  79.34362  46.498275
+4.3  Radius of line 2327 at 1.93572 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  130.96434  79.70994  45.991125
+4.4  Line 1621 of rad 0.4275 links to 1620 of rad 0.19.  (no action taken)
+     B1      X, Y, Z:  108.1784  65.2308  46.7595
+4.4  Line 2378 of rad 0.475 links to 2377 of rad 0.19.  (no action taken)
+     B1      X, Y, Z:  122.11414  72.24161  23.354775
+4.4  Line 2547 of rad 0.43928 links to 2546 of rad 0.19.  (no action taken)
+     B1      X, Y, Z:  102.10885  28.52451  42.8031
+2.1  Line 1716 has 3 daughters.  Type is 3.  (no action taken)
+     B1      X, Y, Z:  107.99657  28.79013  24.222825
+ 
+ 

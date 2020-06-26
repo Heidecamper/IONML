@@ -1,0 +1,21 @@
+# Standardization file for ./morphologies/Pre_processed_cells/C49A_scaled_exp.swc created with StdSwc version 1.31 on 3/24/20.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+2.5  Length of segment ending at point 282 <= 0.1 at 0.0265.  (no action taken)
+     B1      X, Y, Z:  497.572  87.53452  114.8232
+2.5  Length of segment ending at point 284 <= 0.1 at 0.0471.  (no action taken)
+     B1      X, Y, Z:  497.5112  87.42926  114.9576
+2.4  Length of segment ending at point 705 >= 6.0 stdevs above mean at 3.9054.  (no action taken)
+     B1      X, Y, Z:  255.39686  89.47366  61.9368
+2.4  Length of segment ending at point 706 >= 6.0 stdevs above mean at 3.5283.  (no action taken)
+     B1      X, Y, Z:  252.71824  89.63592  59.646
+2.7  Line 1711 of rad 1.14 is an included side branch.  (no action taken)
+     B1      X, Y, Z:  349.7463  101.93272  106.2798
+4.4  Line 660 of rad 1.6625 links to 659 of rad 0.76.  (no action taken)
+     B1      X, Y, Z:  312.02446  105.31282  47.5632
+2.1  Line 1 has 3 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  284.40378  105.63468  31.5558
+ 
+ 

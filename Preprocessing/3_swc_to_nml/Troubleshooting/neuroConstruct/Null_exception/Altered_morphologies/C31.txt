@@ -1,0 +1,4 @@
+Lines that cause the error:
+Line 4 in combination with line 3: 
+	3 3 136.6189 111.50018 43.418925 8.18136 2
+	4 1 144.67464 108.49542 43.060725 1.1 3
