@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="net">
+
+<include href="../Optimized/ResLength5/C6A_scaled_exp_resample_5.cell.nml"/>
+
+<pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="-1 nA"/>
+
+<network id="net" type="networkWithTemperature" temperature="35 degC">
+
+	<population id="pop0" component="C6A" type="populationList" size="1">
+		<instance id="0">
+			<location x="0" y="0" z="0"/>
+		</instance>
+	</population>
+
+</network>
+</neuroml>
