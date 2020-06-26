@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta3.xsd" id="net">
 
-<include href="../cells/Optimized/ResLength5/C10_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C11A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C15A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C16_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C1A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C20A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C21A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C21B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C23_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C25A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C25C_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C28B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C31_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C32B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C45A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C46A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C46B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C48_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C49A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C49B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C49C_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C4A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C50A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C50B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C51A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C51B_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C51C_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C51D_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/C6A_scaled_exp_resample_5.cell.nml"/>
-
+<include href="../Optimized/ResLength5/C10_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C11A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C15A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C16_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C1A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C20A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C21A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C21B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C23_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C25A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C25C_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C28B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C31_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C32B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C45A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C46A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C46B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C48_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C49A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C49B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C49C_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C4A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C50A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C50B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C51A_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C51B_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C51C_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C51D_scaled_exp_resample_5.cell.nml"/>
+<include href="../Optimized/ResLength5/C6A_scaled_exp_resample_5.cell.nml"/>
 
 <pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="-1 nA"/>
 
@@ -209,7 +208,6 @@
 			<location x="800" y="800" z="0"/>
 		</instance>
 	</population>
-
 
 </network>
 </neuroml>
