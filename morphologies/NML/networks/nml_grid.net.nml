@@ -30,7 +30,7 @@
 <include href="../cells/Optimized/ResLength5/C51C_scaled_exp_resample_5.cell.nml"/>
 <include href="../cells/Optimized/ResLength5/C51D_scaled_exp_resample_5.cell.nml"/>
 <include href="../cells/Optimized/ResLength5/C6A_scaled_exp_resample_5.cell.nml"/>
-<include href="../cells/Optimized/ResLength5/"/>
+
 
 <pulseGenerator id="iclamp0" delay="500 ms" duration="200 ms" amplitude="-1 nA"/>
 
@@ -210,11 +210,6 @@
 		</instance>
 	</population>
 
-	<population id="pop29" component="" type="populationList" size="1">
-		<instance id="0">
-			<location x="1000" y="800" z="0"/>
-		</instance>
-	</population>
 
 </network>
 </neuroml>
