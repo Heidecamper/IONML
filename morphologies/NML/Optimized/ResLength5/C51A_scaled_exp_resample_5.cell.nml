@@ -2365,7 +2365,27 @@ inode R X Y Z D/2 idpar</notes>
                 <member segment="274"/>
             </segmentGroup>
 
-
+            <segmentGroup id="all">
+                <include segmentGroup="Soma"/>
+                <include segmentGroup="ExtraSomaSec_Comp_4"/>
+                <include segmentGroup="ExtraSomaSec_Comp_5"/>
+                <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="Sec_Comp_11"/>
+                <include segmentGroup="Sec_Comp_12"/>
+                <include segmentGroup="Sec_Comp_18"/>
+                <include segmentGroup="Sec_Comp_19"/>
+                <include segmentGroup="Sec_Comp_20"/>
+                <include segmentGroup="Sec_Comp_35"/>
+                <include segmentGroup="Sec_Comp_36"/>
+                <include segmentGroup="Sec_Comp_55"/>
+                <include segmentGroup="Sec_Comp_56"/>
+                <include segmentGroup="Sec_Comp_57"/>
+                <include segmentGroup="Sec_Comp_58"/>
+                <include segmentGroup="Sec_Comp_79"/>
+                <include segmentGroup="Sec_Comp_82"/>
+                <include segmentGroup="Sec_Comp_100"/>
+                <include segmentGroup="Sec_Comp_101"/>
+            </segmentGroup>
 
             <segmentGroup id="Colour_White">
                 <include segmentGroup="Soma"/>
@@ -2429,28 +2449,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="Sec_Comp_101"/>
             </segmentGroup>
 
-                        <segmentGroup id="all">
-                <include segmentGroup="axon_group"/>
-                <include segmentGroup="Soma"/>
-                <include segmentGroup="ExtraSomaSec_Comp_4"/>
-                <include segmentGroup="ExtraSomaSec_Comp_5"/>
-                <include segmentGroup="ExtraSomaSec_Comp_8"/>
-                <include segmentGroup="Sec_Comp_11"/>
-                <include segmentGroup="Sec_Comp_12"/>
-                <include segmentGroup="Sec_Comp_18"/>
-                <include segmentGroup="Sec_Comp_19"/>
-                <include segmentGroup="Sec_Comp_20"/>
-                <include segmentGroup="Sec_Comp_35"/>
-                <include segmentGroup="Sec_Comp_36"/>
-                <include segmentGroup="Sec_Comp_55"/>
-                <include segmentGroup="Sec_Comp_56"/>
-                <include segmentGroup="Sec_Comp_57"/>
-                <include segmentGroup="Sec_Comp_58"/>
-                <include segmentGroup="Sec_Comp_79"/>
-                <include segmentGroup="Sec_Comp_82"/>
-                <include segmentGroup="Sec_Comp_100"/>
-                <include segmentGroup="Sec_Comp_101"/>
-            </segmentGroup>
+            
         </morphology>
 
             <!--Adding the biophysical parameters-->
