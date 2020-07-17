@@ -5174,13 +5174,12 @@ inode R X Y Z D/2 idpar</notes>
                 <channelDensity condDensity="20 mS_per_cm2" id="cal_soma" segmentGroup="soma_group"
                 ionChannel="cal" ion="cal" erev="120 mV"/>
 
-                <!-- Dendrite_group does not exist in this morphology
-
-                dendrite 10 35 25
+                <!-- dendrite 10 35 25
                 <channelDensity condDensity="10 mS_per_cm2" id="cah_dend" segmentGroup="dendrite_group" ionChannel="cah" ion="ca" erev="120 mV"/>
                 <channelDensity condDensity="35 mS_per_cm2" id="kca_dend" segmentGroup="dendrite_group" ionChannel="kca" ion="k" erev="-75 mV"/>
                 <channelDensity condDensity="25 mS_per_cm2" id="h_dend" segmentGroup="dendrite_group" ionChannel="h" ion="k" erev="-43 mV"/>
-                -->
+            -->
+
                 <!-- axon -->
                 <channelDensity condDensity="200 mS_per_cm2" id="na_axon" segmentGroup="axon_group" ionChannel="na_a" ion="na" erev="55 mV"/>
                 <channelDensity condDensity="200 mS_per_cm2" id="k_axon" segmentGroup="axon_group" ionChannel="k" ion="k" erev="-75 mV"/>
@@ -5193,15 +5192,14 @@ inode R X Y Z D/2 idpar</notes>
 
             </membraneProperties>
 
-            <!-- Dendrite group does not exist
+
             <intracellularProperties>
-                <species segmentGroup="dendrite_group" id="ca" ion="ca" concentrationModel="ca_conc" initialConcentration="3.7152 mM" initialExtConcentration="3.0mM"/>
+               <!-- <species segmentGroup="dendrite_group" id="ca" ion="ca" concentrationModel="ca_conc" initialConcentration="3.7152 mM" initialExtConcentration="3.0mM"/> -->
 
                 <resistivity value=".1 ohm_cm" segmentGroup="soma_group"/>
-                <resistivity value=".1 ohm_cm" segmentGroup="dendrite_group"/>
+             <!--   <resistivity value=".1 ohm_cm" segmentGroup="dendrite_group"/> -->
                 <resistivity value=".1 ohm_cm" segmentGroup="axon_group"/>
             </intracellularProperties>
-        -->
 
         </biophysicalProperties>
 
