@@ -89,6 +89,7 @@ inode R X Y Z D/2 idpar</notes>
             </segment>
 
             <segment id="6" name="Comp_8">
+                <parent segment="1"/>
                 <proximal x="106.92203" y="120.05485" z="64.55995" diameter="6.0325"/>
                 <distal x="106.92203" y="120.05485" z="64.55995" diameter="6.0325"/>
             </segment>
