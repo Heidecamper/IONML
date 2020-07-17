@@ -13,5 +13,9 @@
 		</instance>
 	</population>
 
+    <inputList id="Clamps" component="iclamp0" population="pop0">
+        <input id="0" target="../pop0/0/C28B" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+    </inputList>
+    
 </network>
 </neuroml>
