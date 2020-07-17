@@ -2454,7 +2454,7 @@ inode R X Y Z D/2 idpar</notes>
 
             <!--Adding the biophysical parameters-->
 
-               <biophysicalProperties id="biophys">
+        <biophysicalProperties id="biophys">
 
             <membraneProperties>
                 <!-- soma -->
