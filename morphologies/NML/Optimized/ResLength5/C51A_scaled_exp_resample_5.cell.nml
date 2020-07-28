@@ -79,12 +79,12 @@ inode R X Y Z D/2 idpar</notes>
             </segment>
 
             <segment id="4" name="Comp_6">
-                <parent segment="0"/>
+                <parent segment="1"/>
                 <distal x="109.54862" y="116.90429" z="63.909813" diameter="3.8"/>
             </segment>
 
             <segment id="5" name="Comp_7">
-                <parent segment="1"/>
+                <parent segment="4"/>
                 <distal x="100.13775" y="126.56034" z="64.97941" diameter="4.56"/>
             </segment>
 
