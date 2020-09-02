@@ -109,6 +109,7 @@ inode R X Y Z D/2 idpar</notes>
 
             <segment id="9" name="Comp_12">
                 <parent segment="0"/>
+                <proximal x="248.83578" y="190.54568" z="45.031277" diameter="15.96"/>
                 <distal x="245.98712" y="189.94101" z="40.14606" diameter="13.15712"/>
             </segment>
 
@@ -2733,10 +2734,6 @@ inode R X Y Z D/2 idpar</notes>
                 <member segment="1"/>
             
                 <member segment="6"/>
-            
-                <member segment="9"/>
-            
-                <member segment="12"/>
             </segmentGroup>
 
             <segmentGroup id="ExtraSomaSec_Comp_4" neuroLexId="sao864921383">    <!--
@@ -2795,6 +2792,16 @@ inode R X Y Z D/2 idpar</notes>
                 <member segment="10"/>
             
                 <member segment="13"/>
+            </segmentGroup>
+
+            <segmentGroup id="ExtraSomaSec_Comp_12" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="9"/>
+            
+                <member segment="12"/>
             </segmentGroup>
 
             <segmentGroup id="Sec_Comp_7" neuroLexId="sao864921383">    <!--
@@ -3969,6 +3976,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_12"/>
                 <include segmentGroup="Sec_Comp_7"/>
                 <include segmentGroup="Sec_Comp_16"/>
                 <include segmentGroup="Sec_Comp_17"/>
@@ -4003,6 +4011,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_12"/>
             </segmentGroup>
 
             <segmentGroup id="soma_group" neuroLexId="GO:0043025">    <!--Soma group-->
@@ -4016,6 +4025,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_12"/>
             </segmentGroup>
 
             <segmentGroup id="ExtraSomaSegments">
@@ -4023,6 +4033,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_12"/>
             </segmentGroup>
 
             <segmentGroup id="Colour_DarkGrey">

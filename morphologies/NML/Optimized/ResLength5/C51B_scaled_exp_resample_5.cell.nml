@@ -3536,7 +3536,6 @@ inode R X Y Z D/2 idpar</notes>
         </morphology>
 
             <!--Adding the biophysical parameters-->
-
                 <biophysicalProperties id="biophys">
 
             <membraneProperties>
@@ -3576,7 +3575,6 @@ inode R X Y Z D/2 idpar</notes>
             </intracellularProperties>
 
         </biophysicalProperties>
-
     </cell>
     
 </neuroml>

@@ -98,6 +98,7 @@ inode R X Y Z D/2 idpar</notes>
 
             <segment id="7" name="Comp_9">
                 <parent segment="0"/>
+                <proximal x="67.68058" y="57.62834" z="34.3314" diameter="7.48"/>
                 <distal x="71.492386" y="54.07626" z="32.30529" diameter="3.78136"/>
             </segment>
 
@@ -2384,8 +2385,6 @@ inode R X Y Z D/2 idpar</notes>
             
                 <member segment="5"/>
             
-                <member segment="7"/>
-            
                 <member segment="9"/>
             </segmentGroup>
 
@@ -2413,6 +2412,14 @@ inode R X Y Z D/2 idpar</notes>
                 These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
 
                 <member segment="6"/>
+            </segmentGroup>
+
+            <segmentGroup id="ExtraSomaSec_Comp_9" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="7"/>
             </segmentGroup>
 
             <segmentGroup id="ExtraSomaSec_Comp_10" neuroLexId="sao864921383">    <!--
@@ -3506,6 +3513,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_9"/>
                 <include segmentGroup="ExtraSomaSec_Comp_10"/>
                 <include segmentGroup="Sec_Comp_11"/>
                 <include segmentGroup="Sec_Comp_12"/>
@@ -3545,6 +3553,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_9"/>
                 <include segmentGroup="ExtraSomaSec_Comp_10"/>
             </segmentGroup>
 
@@ -3558,6 +3567,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_9"/>
                 <include segmentGroup="ExtraSomaSec_Comp_10"/>
             </segmentGroup>
 
@@ -3565,6 +3575,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
+                <include segmentGroup="ExtraSomaSec_Comp_9"/>
                 <include segmentGroup="ExtraSomaSec_Comp_10"/>
             </segmentGroup>
 

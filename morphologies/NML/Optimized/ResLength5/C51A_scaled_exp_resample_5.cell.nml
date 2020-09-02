@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="C51A_scaled_exp_resample_5">
+    
     <!-- soma -->
-    <include href="na_s.channel.nml"/>
-    <include href="kdr.channel.nml"/>
-    <include href="k.channel.nml"/>
-    <include href="cal.channel.nml"/>
+    <include href="../channels/na_s.channel.nml"/>
+    <include href="../channels/kdr.channel.nml"/>
+    <include href="../channels/k.channel.nml"/>
+    <include href="../channels/cal.channel.nml"/>
 
     <!-- dend -->
-    <include href="cah.channel.nml"/>
-    <include href="kca.channel.nml"/>
-    <include href="h.channel.nml"/>
-    <include href="ca.nml"/>
+    <include href="../channels/cah.channel.nml"/>
+    <include href="../channels/kca.channel.nml"/>
+    <include href="../channels/h.channel.nml"/>
+    <include href="../channels/ca.nml"/>
 
     <!-- axon -->
-    <include href="na_a.channel.nml"/>
+    <include href="../channels/na_a.channel.nml"/>
 
     <!-- all  -->
-    <include href="leak.channel.nml"/>
+    <include href="../channels/leak.channel.nml"/>
+
     <!--
     % Cell morphology
     % p1     = 0.25;        % Cell surface ratio soma/dendrite
@@ -79,12 +81,13 @@ inode R X Y Z D/2 idpar</notes>
             </segment>
 
             <segment id="4" name="Comp_6">
-                <parent segment="1"/>
+                <parent segment="0"/>
+                <proximal x="100.0331" y="117.0343" z="64.0716" diameter="12.16"/>
                 <distal x="109.54862" y="116.90429" z="63.909813" diameter="3.8"/>
             </segment>
 
             <segment id="5" name="Comp_7">
-                <parent segment="4"/>
+                <parent segment="1"/>
                 <distal x="100.13775" y="126.56034" z="64.97941" diameter="4.56"/>
             </segment>
 
@@ -1638,8 +1641,6 @@ inode R X Y Z D/2 idpar</notes>
             
                 <member segment="1"/>
             
-                <member segment="4"/>
-            
                 <member segment="5"/>
             </segmentGroup>
 
@@ -1665,6 +1666,15 @@ inode R X Y Z D/2 idpar</notes>
                 <member segment="8"/>
             
                 <member segment="11"/>
+            </segmentGroup>
+
+            <segmentGroup id="ExtraSomaSec_Comp_6" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="4"/>
+            
             </segmentGroup>
 
             <segmentGroup id="ExtraSomaSec_Comp_8" neuroLexId="sao864921383">    <!--
@@ -2369,6 +2379,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="Soma"/>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
+                <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
                 <include segmentGroup="Sec_Comp_11"/>
                 <include segmentGroup="Sec_Comp_12"/>
@@ -2391,6 +2402,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="Soma"/>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
+                <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
             </segmentGroup>
 
@@ -2403,12 +2415,14 @@ inode R X Y Z D/2 idpar</notes>
 
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
+                <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
             </segmentGroup>
 
             <segmentGroup id="ExtraSomaSegments">
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
+                <include segmentGroup="ExtraSomaSec_Comp_6"/>
                 <include segmentGroup="ExtraSomaSec_Comp_8"/>
             </segmentGroup>
 

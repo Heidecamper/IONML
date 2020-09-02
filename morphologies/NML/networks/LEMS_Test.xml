@@ -16,13 +16,13 @@
 
 
     <!-- Including file with a <neuroml> root, a "real" NeuroML 2 file -->
-    <Include file="C51A_optimized.net.nml"/>
+    <Include file="C51B_optimized.net.nml"/>
 
 
     <Simulation id="sim1" length="300ms" step="0.01ms" target="net">
     
         <Display id="d1" title="voltage" timeScale="1ms" xmin="0" xmax="300" ymin="-90" ymax="50">
-                <Line id="v" quantity="pop24/0/C51A/v" scale="1mV" color="#cccccc" timeScale="1ms"/>
+                <Line id="v" quantity="pop0/0/C51B/v" scale="1mV" color="#cccccc" timeScale="1ms"/>
           
         </Display>
        
